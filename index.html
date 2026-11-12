@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>御龙记 柴文网 - 玄幻连载与读者社区</title>
+  <meta name="description" content="御龙记 柴文网 汇聚《御龙记》最新章节目录、人物设定、修炼体系解析与读者讨论，适合追更玄幻小说的读者查看剧情进展与书评反馈。">
+  <meta name="keywords" content="御龙记 柴文网">
+  <style>
+    :root {
+      --primary: #3b5e8b;
+      --primary-light: #e8eff8;
+      --primary-dark: #1f3a5f;
+      --bg: #f5f7fa;
+      --panel: #ffffff;
+      --text-primary: #1e2a3a;
+      --text-secondary: #4e5d6e;
+      --text-tertiary: #7c8b9c;
+      --border: #dde3ea;
+      --radius-card: 12px;
+      --radius-btn: 8px;
+      --radius-tag: 20px;
+      --shadow-default: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.08);
+      --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+      --max-width: 1360px;
+      --announce-height: 44px;
+      --header-height: 64px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--announce-height) + var(--header-height));
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 吸顶公告条 */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--primary-dark);
+      color: #fff;
+      height: var(--announce-height);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      overflow-x: auto;
+    }
+
+    .announce-bar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      opacity: 0.9;
+    }
+
+    .announce-bar a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .announce-brand {
+      font-weight: 700;
+      margin-right: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .announce-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-right: 24px;
+    }
+
+    .announce-item .date {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+    }
+
+    /* 吸顶页头 */
+    .site-header {
+      position: sticky;
+      top: var(--announce-height);
+      z-index: 99;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .logo svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .nav-main {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .nav-main a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: var(--radius-btn);
+      transition: background 0.2s;
+    }
+
+    .nav-main a:hover,
+    .nav-main a:focus-visible {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .header-actions {
+      margin-left: auto;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      padding: 4px 8px;
+    }
+
+    .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 0.85rem;
+      width: 140px;
+      color: var(--text-primary);
+    }
+
+    .search-box button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--text-tertiary);
+      font-size: 0.9rem;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    /* 主容器 */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
+
+    /* 三栏布局 */
+    .layout-three-col {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) 260px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* 频道索引 - 左栏 */
+    .channel-sidebar {
+      position: sticky;
+      top: calc(var(--announce-height) + var(--header-height) + 24px);
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 16px 12px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .channel-sidebar h2 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-tertiary);
+      margin-bottom: 12px;
+      padding-left: 8px;
+    }
+
+    .channel-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .channel-list a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: var(--radius-btn);
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .channel-list a:hover,
+    .channel-list a:focus-visible {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .channel-list a.active {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* 主内容区 */
+    .main-content {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* 首屏 */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, #2a4a6e 100%);
+      border-radius: var(--radius-card);
+      padding: 48px 40px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-actions a {
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: var(--radius-btn);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary {
+      background: #e8c06a;
+      color: var(--primary-dark);
+    }
+
+    .btn-primary:hover {
+      background: #f0d08a;
+      box-shadow: 0 4px 12px rgba(232, 192, 106, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-deco {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    /* 板块通用 */
+    .section {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 20px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .section-intro {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--bg);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 12px 14px 14px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: var(--radius-tag);
+      font-size: 0.7rem;
+      background: var(--primary-light);
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .tag-gold {
+      background: #fdf0d5;
+      color: #8b6b1f;
+    }
+
+    /* 紧凑列表 */
+    .list-compact {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .list-compact li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .list-compact li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .list-compact .item-name {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .list-compact .item-desc {
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      flex: 1;
+    }
+
+    .list-compact .item-date {
+      color: var(--text-tertiary);
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .category-item {
+      background: var(--bg);
+      border-radius: var(--radius-btn);
+      padding: 14px 12px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+      display: block;
+    }
+
+    .category-item:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    /* 深度解析 */
+    .deep-dive h3 {
+      font-size: 1.05rem;
+      margin: 20px 0 8px;
+      color: var(--text-primary);
+    }
+
+    .deep-dive h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .deep-dive p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .deep-dive ul {
+      margin: 8px 0 16px 20px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* FAQ */
+    details {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      padding: 12px 16px;
+      background: var(--bg);
+      margin-bottom: 10px;
+    }
+
+    details summary {
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-primary);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    details p {
+      margin-top: 10px;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* 评论 */
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .comment-item {
+      background: var(--bg);
+      border-radius: var(--radius-btn);
+      padding: 12px 16px;
+    }
+
+    .comment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .comment-nickname {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--primary);
+    }
+
+    .comment-date {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+    }
+
+    .comment-text {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 相关资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .news-thumb {
+      flex-shrink: 0;
+      width: 120px;
+      height: 80px;
+      border-radius: var(--radius-btn);
+      object-fit: cover;
+      background: var(--primary-light);
+    }
+
+    .news-content {
+      flex: 1;
+    }
+
+    .news-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .news-date {
+      font-size: 0.78rem;
+      color: var(--text-tertiary);
+      margin-bottom: 4px;
+    }
+
+    .news-summary {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* 标签索引 */
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag-cloud a {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: var(--radius-tag);
+      background: var(--bg);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .tag-cloud a:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    /* 右侧辅助栏 */
+    .aside-panel {
+      position: sticky;
+      top: calc(var(--announce-height) + var(--header-height) + 24px);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .aside-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .aside-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .aside-card h3::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 14px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .hot-list {
+      list-style: none;
+      counter-reset: hot-counter;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hot-list li {
+      counter-increment: hot-counter;
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      font-size: 0.85rem;
+    }
+
+    .hot-list li::before {
+      content: counter(hot-counter);
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.8rem;
+      min-width: 18px;
+    }
+
+    .hot-list a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .hot-list a:hover {
+      color: var(--primary);
+    }
+
+    .hot-count {
+      color: var(--text-tertiary);
+      font-size: 0.75rem;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    /* 投稿互动板块 */
+    .interaction-section {
+      background: linear-gradient(135deg, var(--primary-light) 0%, #f0f5fc 100%);
+    }
+
+    .interaction-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .interaction-card {
+      background: var(--panel);
+      border-radius: var(--radius-btn);
+      padding: 20px;
+      text-align: center;
+      box-shadow: var(--shadow-default);
+    }
+
+    .interaction-card h4 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+
+    .interaction-card p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .interaction-card a {
+      display: inline-block;
+      padding: 8px 20px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius-btn);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .interaction-card a:hover {
+      background: var(--primary-dark);
+    }
+
+    /* 页尾 */
+    .site-footer {
+      background: var(--primary-dark);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 40px 20px 24px;
+      margin-top: 48px;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .footer-brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .footer-desc {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 320px;
+    }
+
+    .footer-group h4 {
+      font-size: 0.9rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .footer-group a {
+      display: block;
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+
+    .footer-group a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow-hover);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s, background 0.2s;
+      z-index: 90;
+    }
+
+    .back-to-top.visible {
+      display: flex;
+    }
+
+    .back-to-top:hover {
+      background: var(--primary-dark);
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .layout-three-col {
+        grid-template-columns: 1fr 260px;
+      }
+      .channel-sidebar {
+        display: none;
+      }
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .layout-three-col {
+        grid-template-columns: 1fr;
+      }
+      .aside-panel {
+        position: static;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero {
+        padding: 32px 20px;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .nav-main {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .search-box input {
+        width: 100px;
+      }
+      .news-item {
+        flex-direction: column;
+      }
+      .news-thumb {
+        width: 100%;
+        height: 120px;
+      }
+      .interaction-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+      }
+      .announce-bar {
+        font-size: 0.75rem;
+        padding: 0 12px;
+      }
+      .announce-brand {
+        margin-right: 8px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* 搜索无结果提示 */
+    .no-result {
+      display: none;
+      padding: 12px;
+      background: var(--primary-light);
+      border-radius: var(--radius-btn);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 8px;
+    }
+
+    .no-result.show {
+      display: block;
+    }
+
+    /* 焦点可见 */
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* 移动端菜单遮罩 */
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 98;
+    }
+
+    .menu-overlay.show {
+      display: block;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: calc(var(--announce-height) + var(--header-height));
+      left: 0;
+      right: 0;
+      background: var(--panel);
+      z-index: 99;
+      padding: 16px;
+      box-shadow: var(--shadow-hover);
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+    .mobile-nav.show {
+      display: block;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 10px 12px;
+      text-decoration: none;
+      color: var(--text-secondary);
+      border-radius: var(--radius-btn);
+      font-size: 0.9rem;
+    }
+
+    .mobile-nav a:hover {
+      background: var(--primary-light);
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce-bar">
+  <span class="announce-brand">御龙记 柴文网</span>
+  <span class="announce-item">
+    <span class="date">2026-11-08</span>
+    <a href="/#latest-update">第387章 龙渊试炼 已更新</a>
+  </span>
+  <span class="announce-item">
+    <span class="date">2026-11-06</span>
+    <a href="/#deep-dive">修炼体系九阶对照表 发布</a>
+  </span>
+  <span class="announce-item">
+    <span>4</span>
+    <a href="/#interaction">本周新增同人投稿</a>
+  </span>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo" aria-label="御龙记 柴文网 首页">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="14" stroke="#3b5e8b" stroke-width="2"/>
+        <path d="M10 20C10 14 14 8 20 8C20 14 16 20 10 20Z" fill="#3b5e8b" opacity="0.7"/>
+        <path d="M22 12C22 18 18 24 12 24C12 18 16 12 22 12Z" fill="#e8c06a" opacity="0.8"/>
+      </svg>
+      <span>御龙记 柴文网</span>
+    </a>
+    <nav class="nav-main" aria-label="主导航">
+      <a href="/#overview">作品概况</a>
+      <a href="/#featured">精选章节</a>
+      <a href="/#latest-update">更新动态</a>
+      <a href="/#categories">分类索引</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#guide">阅读指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">读者评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#recommend">相关推荐</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box">
+        <input type="search" id="searchInput" placeholder="搜索章节/人物/设定" aria-label="搜索站内内容">
+        <button type="button" id="searchBtn" aria-label="搜索">🔍</button>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- 移动端菜单与遮罩 -->
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="mobile-nav" id="mobileNav" aria-label="移动端导航">
+  <a href="/#overview">作品概况</a>
+  <a href="/#featured">精选章节</a>
+  <a href="/#latest-update">更新动态</a>
+  <a href="/#categories">分类索引</a>
+  <a href="/#deep-dive">深度解析</a>
+  <a href="/#guide">阅读指南</a>
+  <a href="/#faq">常见问题</a>
+  <a href="/#comments">读者评论</a>
+  <a href="/#news">相关资讯</a>
+  <a href="/#recommend">相关推荐</a>
+  <a href="/#interaction">投稿互动</a>
+</nav>
+
+<!-- 主容器 -->
+<div class="container">
+  <div class="layout-three-col">
+
+    <!-- 左频道索引 -->
+    <aside class="channel-sidebar" aria-label="频道索引">
+      <h2>频道索引</h2>
+      <ul class="channel-list">
+        <li><a href="/#overview" class="active">作品概况</a></li>
+        <li><a href="/#featured">精选章节</a></li>
+        <li><a href="/#latest-update">更新动态</a></li>
+        <li><a href="/#categories">分类索引</a></li>
+        <li><a href="/#deep-dive">深度解析</a></li>
+        <li><a href="/#guide">阅读指南</a></li>
+        <li><a href="/#faq">常见问题</a></li>
+        <li><a href="/#comments">读者评论</a></li>
+        <li><a href="/#news">相关资讯</a></li>
+        <li><a href="/#recommend">相关推荐</a></li>
+        <li><a href="/#interaction">投稿互动</a></li>
+      </ul>
+    </aside>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+
+      <!-- 首屏 -->
+      <section class="hero" id="top">
+        <h1>御龙记 柴文网</h1>
+        <p>《御龙记》连载小说与读者社区，收录第387章更新、修炼九阶体系解析、龙渊试炼全流程攻略，以及读者对人物塑造与剧情走向的讨论。</p>
+        <div class="hero-actions">
+          <a href="/#latest-update" class="btn-primary">查看最新更新</a>
+          <a href="/#deep-dive" class="btn-outline">修炼体系解析</a>
+        </div>
+        <svg class="hero-deco" width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="80" stroke="#fff" stroke-width="2"/>
+          <circle cx="100" cy="100" r="60" stroke="#fff" stroke-width="1.5"/>
+          <path d="M100 20 L120 80 L180 100 L120 120 L100 180 L80 120 L20 100 L80 80 Z" fill="#fff" opacity="0.3"/>
+        </svg>
+      </section>
+
+      <!-- 作品概况 -->
+      <section class="section" id="overview">
+        <h2>作品概况与世界观</h2>
+        <p class="section-intro">
+          《御龙记》以龙渊大陆为舞台，讲述少年秦昭意外唤醒上古龙魂后卷入九阶修炼体系与宗门纷争的故事。目前已连载至第387章，覆盖东荒、南疆、西漠三大区域，出场人物超过40位，主线围绕“龙渊试炼”与“天机阁”的势力博弈展开。第380章至第387章集中描写秦昭在龙渊试炼第三关面对幻境考验的过程，同时揭示龙魂与天机阁阁主之间的旧日契约。
+        </p>
+        <p class="section-intro" style="margin-bottom:0;">
+          修炼体系分为九阶：淬体、凝气、通脉、开元、灵台、化神、归墟、破虚、御龙。每一阶对应三个小境界，龙渊试炼要求参与者至少达到通脉境后期。目前读者讨论集中在第387章末尾出现的“龙魂反噬”伏笔——秦昭的龙魂在第三关幻境中首次出现失控迹象，而此前第361章天机阁阁主曾提到“龙魂契约有代价”。
+        </p>
+      </section>
+
+      <!-- 精选章节推荐 -->
+      <section class="section" id="featured">
+        <h2>精选章节与人物专题</h2>
+        <div class="card-grid">
+          <article class="card">
+            <img src="https://picsum.photos/seed/yulong387/400/300" alt="第387章 龙渊试炼·幻境龙魂" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title">第387章 龙渊试炼·幻境龙魂</div>
+              <div class="card-desc">秦昭在第三关幻境中遭遇龙魂反噬，被迫提前暴露御龙血脉。章节末尾出现天机阁暗桩的传讯符。</div>
+              <div class="card-meta">
+                <span class="tag tag-gold">主线更新</span>
+                <span class="tag">龙渊试炼</span>
+                <span class="tag">2026-11-08</span>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/tianjige/400/300" alt="天机阁阁主 人物专题" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title">天机阁阁主·真实身份线索</div>
+              <div class="card-desc">第361章与第379章两次提到阁主与龙魂的旧日契约，读者梳理出三条证据链指向阁主可能是初代御龙者的残魂。</div>
+              <div class="card-meta">
+                <span class="tag">人物解析</span>
+                <span class="tag">天机阁</span>
+                <span class="tag">2026-11-05</span>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/jiujie/400/300" alt="修炼九阶体系对照表" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title">修炼九阶体系对照表</div>
+              <div class="card-desc">从淬体到御龙，每阶三个小境界的突破条件、战力参考与代表角色汇总。化神境以上角色目前仅出现5位。</div>
+              <div class="card-meta">
+                <span class="tag">设定整理</span>
+                <span class="tag">九阶体系</span>
+                <span class="tag">2026-11-06</span>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/longyuan/400/300" alt="龙渊试炼流程攻略" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title">龙渊试炼三关流程梳理</div>
+              <div class="card-desc">第一关幻心阵、第二关龙力阶、第三关幻境龙魂，每关的淘汰率与通关条件。第二关目前已有17位角色登场。</div>
+              <div class="card-meta">
+                <span class="tag">剧情攻略</span>
+                <span class="tag">龙渊试炼</span>
+                <span class="tag">2026-11-04</span>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/qinzhao/400/300" alt="秦昭人物成长线" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title">秦昭成长线：从淬体到通脉后期</div>
+              <div class="card-desc">第1章到第387章的境界变化节点梳理，包含三次关键突破与两次濒死经历，以及龙魂觉醒的触发条件。</div>
+              <div class="card-meta">
+                <span class="tag">人物成长</span>
+                <span class="tag">秦昭</span>
+                <span class="tag">2026-11-03</span>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/donghuang/400/300" alt="东荒篇世界观" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-title">东荒篇地理与势力分布</div>
+              <div class="card-desc">东荒三大宗门（青冥剑宗、百兽谷、天机阁）的势力范围与冲突关系。第340章地图标注了龙渊试炼的具体位置。</div>
+              <div class="card-meta">
+                <span class="tag">世界观</span>
+                <span class="tag">东荒</span>
+                <span class="tag">2026-11-02</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 最新更新动态 -->
+      <section class="section" id="latest-update">
+        <h2>最新更新与连载动态</h2>
+        <ul class="list-compact">
+          <li>
+            <span class="item-name">第387章 龙渊试炼·幻境龙魂</span>
+            <span class="item-desc">秦昭在幻境中龙魂失控，天机阁暗桩传讯符暴露</span>
+            <span class="item-date">2026-11-08</span>
+          </li>
+          <li>
+            <span class="item-name">第386章 龙渊试炼·第三关开启</span>
+            <span class="item-desc">第三关幻境规则公布：每位参与者面对自身龙魂倒影</span>
+            <span class="item-date">2026-11-07</span>
+          </li>
+          <li>
+            <span class="item-name">第385章 龙渊试炼·第二关结果</span>
+            <span class="item-desc">17位参与者中9人通过龙力阶，秦昭以通脉后期越级通过</span>
+            <span class="item-date">2026-11-06</span>
+          </li>
+          <li>
+            <span class="item-name">第384章 天机阁的观察者</span>
+            <span class="item-desc">天机阁执事在试炼外围记录秦昭的龙魂波动数据</span>
+            <span class="item-date">2026-11-05</span>
+          </li>
+          <li>
+            <span class="item-name">第383章 百兽谷的退场</span>
+            <span class="item-desc">百兽谷弟子因龙力阶成绩不达标提前退出试炼</span>
+            <span class="item-date">2026-11-04</span>
+          </li>
+          <li>
+            <span class="item-name">第382章 青冥剑宗的底牌</span>
+            <span class="item-desc">青冥剑宗首席弟子在第二关展示开元境实力，引发围观</span>
+            <span class="item-date">2026-11-03</span>
+          </li>
+          <li>
+            <span class="item-name">第381章 试炼前的夜谈</span>
+            <span class="item-desc">秦昭与同门讨论龙魂契约的代价，提及第361章细节</span>
+            <span class="item-date">2026-11-02</span>
+          </li>
+          <li>
+            <span class="item-name">第380章 龙渊试炼·第一关</span>
+            <span class="item-desc">幻心阵淘汰4人，秦昭以通脉境扛过心魔拷问</span>
+            <span class="item-date">2026-11-01</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="section" id="categories">
+        <h2>内容分类索引</h2>
+        <div class="category-grid">
+          <a href="/#latest-update" class="category-item">章节速递</a>
+          <a href="/#featured" class="category-item">人物档案</a>
+          <a href="/#deep-dive" class="category-item">修炼体系</a>
+          <a href="/#guide" class="category-item">剧情攻略</a>
+          <a href="/#comments" class="category-item">读者书评</a>
+          <a href="/#news" class="category-item">连载动态</a>
+          <a href="/#interaction" class="category-item">同人投稿</a>
+          <a href="/#recommend" class="category-item">同类推荐</a>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="section deep-dive" id="deep-dive">
+        <h2>修炼体系与龙魂契约深度解析</h2>
+        <p class="section-intro">
+          九阶修炼体系是《御龙记》战力框架的核心。从第1章到第387章，文本中明确出现的境界突破案例有23次，其中淬体境到通脉境的突破占14次。化神境以上角色仅出现5位：天机阁阁主、青冥剑宗宗主、百兽谷谷主、龙渊守护者、以及第379章提到的“初代御龙者残魂”。这5位的共同点是都曾接触过龙渊底部的龙魂本源。
+        </p>
+
+        <h3>九阶体系的判定标准与实战差距</h3>
+        <p>
+          淬体、凝气、通脉三阶属于基础阶段，文本中给出的判断依据是“气血外放”与“灵力凝形”两个可观察指标。第380章幻心阵中，秦昭以通脉后期扛过心魔拷问，而同场一位开元境初期弟子反而被淘汰——这场比试的具体规则是“心魔强度与参与者修为正相关”，修为越高，幻心阵生成的心魔越强。这意味着龙渊试炼第一关并非纯粹比拼战力，而是测试心性稳定度。第382章青冥剑宗首席弟子在第二关展示开元境实力时，旁白特意注明“龙力阶的承压上限为开元境中期”，暗示第三关的幻境龙魂可能对更高境界者更不利。
+        </p>
+
+        <h3>龙魂契约的已知条款与代价线索</h3>
+        <p>
+          第361章天机阁阁主与秦昭的对话中，明确提到龙魂契约的三项已知条款：
+        </p>
+        <ul>
+          <li>契约方可在危机时刻借用龙魂力量，但借用次数与持续时间受境界限制。秦昭目前通脉后期，单次借用上限为三息。</li>
+          <li>每次借用后需以自身精血反哺龙魂，第384章天机阁执事记录的“龙魂波动数据”中，秦昭的精血损耗率比同境界契约者高17%。</li>
+          <li>契约不可单方面解除，第379章初代御龙者残魂提到“解约需以御龙境修为重写契约”，而御龙境是九阶最高阶，目前全书无人达到。</li>
+        </ul>
+        <p>
+          第387章末尾的龙魂反噬发生在秦昭未主动借用的情况下，这与前三项条款都不吻合。读者“青冥山客”在第387章评论区指出，该现象更接近第342章提到的“龙魂自主意识觉醒”分支条件——当契约方境界低于龙魂原主两个大阶时，龙魂可能产生自主行为。秦昭通脉后期，龙魂原主初代御龙者为御龙境，差距正好两个大阶。
+        </p>
+
+        <h3>天机阁在试炼中的角色与信息层级</h3>
+        <p>
+          第384章天机阁执事记录秦昭数据的行为，目前有三种解读，分别对应不同信息层级：
+        </p>
+        <ul>
+          <li><strong>已公开事实：</strong>天机阁执事在第384章明确携带“龙魂波动记录仪”，并在第385章向阁主汇报了秦昭的精血损耗率。</li>
+          <li><strong>当事人回应：</strong>第386章秦昭发现被记录后，天机阁执事回应“例行监测，所有契约者同等待遇”，但拒绝出示其他契约者的记录数据。</li>
+          <li><strong>读者推测：</strong>读者“龙渊底下有矿”统计第380章至第387章天机阁执事出场次数（共7次），其中5次在秦昭附近，推测天机阁对秦昭的关注度高于其他参与者。</li>
+        </ul>
+        <p>
+          第387章暗桩传讯符的出现，进一步强化了“天机阁在试炼中另有目的”的读者判断，但传讯符内容尚未公开，无法确认是否与龙魂契约直接相关。
+        </p>
+      </section>
+
+      <!-- 阅读指南 -->
+      <section class="section" id="guide">
+        <h2>阅读顺序与追更指南</h2>
+        <p class="section-intro">
+          新读者建议从第340章“龙渊试炼报名”开始阅读，这一章交代了试炼规则、参赛资格和势力背景，对理解后续剧情有关键作用。前339章可按人物线选读：秦昭成长线（第1-80章）、天机阁线索（第120-180章）、东荒势力冲突（第200-280章）。
+        </p>
+        <p class="section-intro" style="margin-bottom:0;">
+          判断一章是否值得细读，可以看三个指标：是否出现新境界突破（标注“境界”）、是否推进龙魂契约条款（标注“契约”）、是否引入新势力或新人物（标注“新人物”）。第380章至第387章中，第380章、第384章、第387章同时满足两个以上指标，属于主线关键章。第383章百兽谷退场属于支线收束，对主线影响较小，可速读。
+        </p>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <h2>常见问题</h2>
+        <details>
+          <summary>龙渊试炼第三关的幻境龙魂具体规则是什么？</summary>
+          <p>第三关要求参与者面对自身龙魂的倒影，幻境强度与参与者的龙魂契约深度正相关。第386章公布的规则写明：幻境中龙魂倒影会模拟契约方最恐惧的场景，通关条件是在幻境中保持意识清醒超过十息。第387章秦昭在第七息时龙魂失控，但章节末尾未明确是否算通关失败。</p>
+        </details>
+        <details>
+          <summary>秦昭的龙魂为什么会在第387章反噬？</summary>
+          <p>第387章的反噬发生在秦昭未主动借用龙魂力量的情况下。目前文本给出的线索指向两个条件同时满足：一是秦昭境界（通脉后期）与龙魂原主（御龙境）相差两个大阶，二是幻境龙魂触发了龙魂的自主意识。第342章提到过“龙魂自主意识觉醒”的分支条件，但当时未明确触发门槛。</p>
+        </details>
+        <details>
+          <summary>天机阁阁主在第361章说的“龙魂契约有代价”具体指什么？</summary>
+          <p>第361章原文列了三项代价：借用龙魂力量需消耗精血、借用时间受境界限制、契约不可单方面解除。第384章天机阁执事记录的秦昭精血损耗率比同境界契约者高17%，这个数字在第385章汇报中被再次引用。第379章初代御龙者残魂补充了第四项代价：解约需御龙境修为。</p>
+        </details>
+        <details>
+          <summary>青冥剑宗首席弟子在第二关展示了什么实力？</summary>
+          <p>第382章写明青冥剑宗首席弟子在龙力阶展示开元境中期实力，承压时间达到二十息，是当场17位参与者中承压时间最长的。但旁白注明龙力阶的承压上限为开元境中期，这意味着该弟子已经触及关卡设计上限，第三关幻境龙魂对其可能产生更强的反制效果。</p>
+        </details>
+        <details>
+          <summary>百兽谷为什么在第383章退出试炼？</summary>
+          <p>第383章给出的直接原因是百兽谷弟子在第二关龙力阶的成绩全部低于合格线。具体数据：百兽谷共派出3名弟子，承压时间分别为8息、6息、5息，均未达到合格线10息。第382章青冥剑宗弟子承压20息的对比数据被百兽谷长老在退场时引用，作为“修炼路线差异”的解释。</p>
+        </details>
+        <details>
+          <summary>第387章的暗桩传讯符是谁发的？内容是什么？</summary>
+          <p>第387章仅描写传讯符出现在秦昭袖中，未写明发送者身份。传讯符上只有天机阁的暗记符号，内容部分被秦昭以龙魂之力焚毁，章节末尾未公开具体文字。读者“天机阁扫地人”统计第384章至第387章天机阁执事的出场位置，推断暗桩可能是第384章记录秦昭数据的执事本人，但文本未确认。</p>
+        </details>
+      </section>
+
+      <!-- 用户评论 -->
+      <section class="section" id="comments">
+        <h2>读者评论</h2>
+        <div class="comment-list">
+          <div class="comment-item">
+            <div class="comment-header">
+              <span class="comment-nickname">青冥山客</span>
+              <span class="comment-date">2026-11-08</span>
+            </div>
+            <div class="comment-text">第387章那个龙魂反噬写得好，前面第342章的伏笔终于用上了。不过第七息就失控，是不是有点太早？按之前设定秦昭的龙魂契合度不是有73%吗。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <span class="comment-nickname">龙渊底下有矿</span>
+              <span class="comment-date">2026-11-08</span>
+            </div>
+            <div class="comment-text">统计了一下天机阁执事从380到387出场7次，5次都在秦昭附近，这关注度明摆着有问题。暗桩传讯符那段我赌五毛是执事本人发的。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <span class="comment-nickname">通脉小透明</span>
+              <span class="comment-date">2026-11-07</span>
+            </div>
+            <div class="comment-text">第二关龙力阶17人里9人过关，淘汰率快一半了。百兽谷那三个弟子承压时间8/6/5息，确实差得有点远，青冥剑宗那个20息太欺负人了。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <span class="comment-nickname">幻心阵老六</span>
+              <span class="comment-date">2026-11-07</span>
+            </div>
+            <div class="comment-text">第一关幻心阵的设计挺有意思，修为越高心魔越强，秦昭通脉后期反而比开元境弟子好过。这个规则在第380章写得很清楚，但后面好像没再提了。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <span class="comment-nickname">百兽谷退堂鼓</span>
+              <span class="comment-date">2026-11-06</span>
+            </div>
+            <div class="comment-text">383章百兽谷退场那段写得有点仓促，三个弟子说退就退，长老也没争取一下。虽然数据确实不够看，但总觉得少点过渡。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <span class="comment-nickname">精血损耗17趴</span>
+              <span class="comment-date">2026-11-06</span>
+            </div>
+            <div class="comment-text">秦昭精血损耗率比同境界高17%，这个数据384章执事记录、385章汇报都出现了，说明作者是认真在埋线。天机阁到底想从龙魂契约里得到什么？</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <span class="comment-nickname">初代残魂观察员</span>
+              <span class="comment-date">2026-11-05</span>
+            </div>
+            <div class="comment-text">379章初代御龙者残魂说“解约需御龙境修为”，全书目前没人达到御龙境。那龙魂契约岂不是无解？还是说秦昭最后会走一条非正统的解除路线。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <span class="comment-nickname">青冥剑宗编外弟子</span>
+              <span class="comment-date">2026-11-05</span>
+            </div>
+            <div class="comment-text">382章首席弟子展示开元境中期实力那段，旁白专门写“龙力阶承压上限为开元境中期”，我怀疑第三关幻境龙魂对他这种刚到上限的人反而更危险，压得越狠弹得越高嘛。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <span class="comment-nickname">追更到387</span>
+              <span class="comment-date">2026-11-04</span>
+            </div>
+            <div class="comment-text">从340章报名一路追到现在，龙渊试炼这三关节奏比前面东荒势力冲突快多了。前200到280章那段有点拖，现在好多了。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <span class="comment-nickname">暗桩传讯符</span>
+              <span class="comment-date">2026-11-04</span>
+            </div>
+            <div class="comment-text">传讯符内容被焚毁这段，作者明显是故意留扣子。天机阁暗记符号出现但内容不公开，等后面章节揭晓吧。就是不知道要等多少章。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <span class="comment-nickname">九阶速查表</span>
+              <span class="comment-date">2026-11-03</span>
+            </div>
+            <div class="comment-text">整理了个九阶体系速查表，化神境以上目前就5个人：阁主、宗主、谷主、龙渊守护者、初代残魂。御龙境一个没有，秦昭要走到御龙境得多少章啊。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <span class="comment-nickname">东荒地图党</span>
+              <span class="comment-date">2026-11-03</span>
+            </div>
+            <div class="comment-text">340章的地图标注了龙渊试炼位置，和前面东荒三大宗门的势力范围对得上。百兽谷离龙渊最近但成绩最差，这地理位置是不是也有点讽刺。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <span class="comment-nickname">今天也在等更新</span>
+              <span class="comment-date">2026-11-02</span>
+            </div>
+            <div class="comment-text">381章秦昭跟同门夜谈，又提到361章阁主说的契约代价。感觉作者在反复强调精血损耗这件事，后面肯定要因为这个出大问题。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <span class="comment-nickname">幻境十息通关</span>
+              <span class="comment-date">2026-11-02</span>
+            </div>
+            <div class="comment-text">386章规则写的是保持清醒超过十息，秦昭第七息失控，按字面算失败了。但387章没写他出局，我猜龙魂反噬本身可能算另一种通关方式？毕竟规则没写失控就淘汰。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-header">
+              <span class="comment-nickname">路人甲不追更</span>
+              <span class="comment-date">2026-11-01</span>
+            </div>
+            <div class="comment-text">我其实没看过这书，朋友推荐来的。看了下387章，龙魂反噬那段写得挺燃的，准备从340章开始补。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="section" id="news">
+        <h2>相关资讯</h2>
+        <div class="news-list">
+          <article class="news-item">
+            <img class="news-thumb" src="https://picsum.photos/seed/news387/600/400" alt="第387章更新公告配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <div class="news-title">第387章更新：龙魂反噬提前触发，秦昭未主动借用</div>
+              <div class="news-date">2026-11-08</div>
+              <div class="news-summary">章节末尾龙魂在幻境中自主失控，与第361章契约条款中“主动借用才需精血反哺”的描述不符。精血损耗率数据尚未在本章更新。</div>
+            </div>
+          </article>
+          <article class="news-item">
+            <img class="news-thumb" src="https://picsum.photos/seed/news386/600/400" alt="第三关规则公布配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <div class="news-title">第386章公布第三关规则：幻境龙魂需保持清醒十息</div>
+              <div class="news-date">2026-11-07</div>
+              <div class="news-summary">规则原文写明“幻境强度与龙魂契约深度正相关”，参与者在幻境中面对的是自身龙魂倒影，而非统一幻象。青冥剑宗首席弟子因境界触及承压上限，幻境强度预计最高。</div>
+            </div>
+          </article>
+          <article class="news-item">
+            <img class="news-thumb" src="https://picsum.photos/seed/news385/600/400" alt="第二关通过名单配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <div class="news-title">第二关龙力阶结果：17人中9人通过，百兽谷全员淘汰</div>
+              <div class="news-date">2026-11-06</div>
+              <div class="news-summary">百兽谷3名弟子承压时间分别为8息、6息、5息，合格线为10息。秦昭以通脉后期承压12息越级通过，精血损耗率较同境界高17%的数据在本章由执事汇报给阁主。</div>
+            </div>
+          </article>
+          <article class="news-item">
+            <img class="news-thumb" src="https://picsum.photos/seed/news384/600/400" alt="天机阁执事记录配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <div class="news-title">天机阁执事携记录仪现身试炼外围，秦昭数据被单独标注</div>
+              <div class="news-date">2026-11-05</div>
+              <div class="news-summary">第384章执事携带的龙魂波动记录仪为天机阁特制，秦昭的精血损耗率17%被红色标注。执事在第385章汇报时拒绝出示其他契约者的对比数据。</div>
+            </div>
+          </article>
+          <article class="news-item">
+            <img class="news-thumb" src="https://picsum.photos/seed/news383/600/400" alt="百兽谷退场配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <div class="news-title">百兽谷3名弟子退出龙渊试炼，长老引用青冥剑宗20息数据</div>
+              <div class="news-date">2026-11-04</div>
+              <div class="news-summary">退场时百兽谷长老将本谷弟子承压时间与青冥剑宗首席弟子的20息做对比，解释为“修炼路线差异”。天机阁未对百兽谷的退出发表评论。</div>
+            </div>
+          </article>
+          <article class="news-item">
+            <img class="news-thumb" src="https://picsum.photos/seed/news382/600/400" alt="青冥剑宗首席弟子配图" width="600" height="400" loading="lazy">
+            <div class="news-content">
+              <div class="news-title">青冥剑宗首席弟子开元境中期承压20息，触及龙力阶上限</div>
+              <div class="news-date">2026-11-03</div>
+              <div class="news-summary">第382章旁白注明龙力阶承压上限为开元境中期，该弟子已无提升空间。第三关幻境龙魂的强度与其境界挂钩，预计对其产生全场最高强度的幻境。</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="section" id="recommend">
+        <h2>相关推荐</h2>
+        <div class="tag-cloud">
+          <a href="/#featured">天机阁阁主身份线索</a>
+          <a href="/#deep-dive">九阶突破案例汇总</a>
+          <a href="/#featured">秦昭成长线节点</a>
+          <a href="/#latest-update">龙渊试炼第三关</a>
+          <a href="/#deep-dive">龙魂契约三项条款</a>
+          <a href="/#news">百兽谷退场分析</a>
+          <a href="/#featured">东荒势力分布图</a>
+          <a href="/#guide">前339章选读路线</a>
+        </div>
+      </section>
+
+      <!-- 投稿互动 -->
+      <section class="section interaction-section" id="interaction">
+        <h2>投稿与互动</h2>
+        <div class="interaction-grid">
+          <div class="interaction-card">
+            <h4>同人作品投稿</h4>
+            <p>每周精选读者创作的《御龙记》人物短篇、剧情续写与设定考据，本周已收到4篇投稿。</p>
+            <a href="/#interaction">查看投稿要求</a>
+          </div>
+          <div class="interaction-card">
+            <h4>章节讨论与投票</h4>
+            <p>第387章龙魂反噬是否算通关失败？参与投票，结果将在下一章更新时汇总展示。</p>
+            <a href="/#comments">参与讨论</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右侧辅助栏 -->
+    <aside class="aside-panel" aria-label="辅助信息">
+      <div class="aside-card">
+        <h3>热门章节榜</h3>
+        <ol class="hot-list">
+          <li><a href="/#featured">第387章 幻境龙魂</a><span class="hot-count">2.3万</span></li>
+          <li><a href="/#featured">第361章 龙魂契约</a><span class="hot-count">1.8万</span></li>
+          <li><a href="/#featured">第380章 幻心阵</a><span class="hot-count">1.5万</span></li>
+          <li><a href="/#featured">第379章 初代残魂</a><span class="hot-count">1.2万</span></li>
+          <li><a href="/#featured">第342章 龙魂觉醒</a><span class="hot-count">0.9万</span></li>
+        </ol>
+      </div>
+      <div class="aside-card">
+        <h3>条目时间线</h3>
+        <ul class="list-compact" style="font-size:0.82rem;">
+          <li><span class="item-name">11-08</span><span class="item-desc">387章 龙魂反噬</span></li>
+          <li><span class="item-name">11-07</span><span class="item-desc">386章 第三关规则</span></li>
+          <li><span class="item-name">11-06</span><span class="item-desc">385章 第二关结果</span></li>
+          <li><span class="item-name">11-05</span><span class="item-desc">384章 执事记录</span></li>
+          <li><span class="item-name">11-04</span><span class="item-desc">383章 百兽谷退场</span></li>
+        </ul>
+      </div>
+      <div class="aside-card">
+        <h3>可信度分层</h3>
+        <ul class="list-compact" style="font-size:0.82rem;">
+          <li><span class="item-name">已公开事实</span><span class="item-desc">第361章三项契约条款</span></li>
+          <li><span class="item-name">当事人回应</span><span class="item-desc">第386章执事“例行监测”</span></li>
+          <li><span class="item-name">读者推测</span><span class="item-desc">暗桩身份指向执事本人</span></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">御龙记 柴文网</div>
+        <p class="footer-desc">
+          收录《御龙记》第340章至第387章的龙渊试炼篇内容，覆盖章节速递、人物档案、修炼体系解析、读者书评与同人投稿。每日18:00前更新当日章节，评论与资讯按周汇总。
+        </p>
+      </div>
+      <div class="footer-group">
+        <h4>内容导航</h4>
+        <a href="/#overview">作品概况</a>
+        <a href="/#featured">精选章节</a>
+        <a href="/#latest-update">更新动态</a>
+        <a href="/#deep-dive">深度解析</a>
+      </div>
+      <div class="footer-group">
+        <h4>互动社区</h4>
+        <a href="/#comments">读者评论</a>
+        <a href="/#interaction">同人投稿</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#faq">常见问题</a>
+      </div>
+      <div class="footer-group">
+        <h4>分类索引</h4>
+        <a href="/#categories">章节速递</a>
+        <a href="/#categories">人物档案</a>
+        <a href="/#categories">修炼体系</a>
+        <a href="/#categories">剧情攻略</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>示例内容聚合页 · 条目数据截至2026年11月8日</span>
+      <span>评论与投稿均为示例条目，不代表真实用户发言</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 回到顶部 -->
+<button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+<script>
+  (function() {
+    // 移动端菜单
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    function toggleMenu(open) {
+      const isOpen = open !== undefined ? open : !mobileNav.classList.contains('show');
+      mobileNav.classList.toggle('show', isOpen);
+      menuOverlay.classList.toggle('show', isOpen);
+      mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+      mobileMenuBtn.textContent = isOpen ? '✕' : '☰';
+    }
+
+    mobileMenuBtn.addEventListener('click', () => toggleMenu());
+    menuOverlay.addEventListener('click', () => toggleMenu(false));
+
+    // 移动端导航点击后收起
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => toggleMenu(false));
+    });
+
+    // Esc 关闭菜单
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('show')) {
+        toggleMenu(false);
+      }
+    });
+
+    // 回到顶部
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > window.innerHeight);
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 搜索功能
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const allSections = document.querySelectorAll('.main-content .section, .hero');
+    const originalDisplays = new Map();
+
+    function resetSearch() {
+      allSections.forEach(section => {
+        section.style.display = '';
+        const noResult = section.querySelector('.no-result');
+        if (noResult) noResult.remove();
+      });
+    }
+
+    function doSearch() {
+      const query = searchInput.value.trim().toLowerCase();
+      resetSearch();
+      if (!query) return;
+
+      let hasResult = false;
+      allSections.forEach(section => {
+        const text = section.textContent.toLowerCase();
+        if (text.includes(query)) {
+          section.style.display = '';
+          hasResult = true;
+        } else {
+          section.style.display = 'none';
+        }
+      });
+
+      // 如果没有任何结果，显示提示
+      if (!hasResult) {
+        allSections.forEach(s => s.style.display = '');
+        const container = document.querySelector('.main-content');
+        const noResult = document.createElement('div');
+        noResult.className = 'no-result show';
+        noResult.textContent = '未找到包含“' + searchInput.value.trim() + '”的章节或条目，请尝试其他关键词。';
+        container.prepend(noResult);
+      }
+    }
+
+    searchBtn.addEventListener('click', doSearch);
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        doSearch();
+      }
+    });
+
+    // 点击频道链接时高亮
+    const channelLinks = document.querySelectorAll('.channel-list a');
+    const sections = document.querySelectorAll('.section[id], .hero[id]');
+
+    function updateActiveChannel() {
+      let currentId = '';
+      const scrollPos = window.scrollY + 120;
+      sections.forEach(section => {
+        if (section.offsetTop <= scrollPos) {
+          currentId = section.id;
+        }
+      });
+      channelLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.includes('#' + currentId)) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveChannel);
+    window.addEventListener('load', updateActiveChannel);
+  })();
+</script>
+
+<!-- FAQ 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "龙渊试炼第三关的幻境龙魂具体规则是什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第三关要求参与者面对自身龙魂的倒影，幻境强度与参与者的龙魂契约深度正相关。第386章公布的规则写明：幻境中龙魂倒影会模拟契约方最恐惧的场景，通关条件是在幻境中保持意识清醒超过十息。第387章秦昭在第七息时龙魂失控，但章节末尾未明确是否算通关失败。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "秦昭的龙魂为什么会在第387章反噬？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第387章的反噬发生在秦昭未主动借用龙魂力量的情况下。目前文本给出的线索指向两个条件同时满足：一是秦昭境界（通脉后期）与龙魂原主（御龙境）相差两个大阶，二是幻境龙魂触发了龙魂的自主意识。第342章提到过“龙魂自主意识觉醒”的分支条件，但当时未明确触发门槛。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "天机阁阁主在第361章说的“龙魂契约有代价”具体指什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第361章原文列了三项代价：借用龙魂力量需消耗精血、借用时间受境界限制、契约不可单方面解除。第384章天机阁执事记录的秦昭精血损耗率比同境界契约者高17%，这个数字在第385章汇报中被再次引用。第379章初代御龙者残魂补充了第四项代价：解约需御龙境修为。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "青冥剑宗首席弟子在第二关展示了什么实力？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第382章写明青冥剑宗首席弟子在龙力阶展示开元境中期实力，承压时间达到二十息，是当场17位参与者中承压时间最长的。但旁白注明龙力阶的承压上限为开元境中期，这意味着该弟子已经触及关卡设计上限，第三关幻境龙魂对其可能产生更强的反制效果。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "百兽谷为什么在第383章退出试炼？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第383章给出的直接原因是百兽谷弟子在第二关龙力阶的成绩全部低于合格线。具体数据：百兽谷共派出3名弟子，承压时间分别为8息、6息、5息，均未达到合格线10息。第382章青冥剑宗弟子承压20息的对比数据被百兽谷长老在退场时引用，作为“修炼路线差异”的解释。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "第387章的暗桩传讯符是谁发的？内容是什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第387章仅描写传讯符出现在秦昭袖中，未写明发送者身份。传讯符上只有天机阁的暗记符号，内容部分被秦昭以龙魂之力焚毁，章节末尾未公开具体文字。读者“天机阁扫地人”统计第384章至第387章天机阁执事的出场位置，推断暗桩可能是第384章记录秦昭数据的执事本人，但文本未确认。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+        </html>
