@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>占豪纵横谈一大参考完整版 - 时政财经深度聚合</title>
+  <meta name="description" content="占豪纵横谈一大参考完整版聚焦大国博弈、宏观政经与产业变局，提供深度解析、每日快讯、评论交锋与专题参考。适合关注地缘政治、财经趋势与政策解读的读者。">
+  <meta name="keywords" content="占豪纵横谈一大参考完整版">
+  <style>
+    /* ---------- 全局变量与重置 ---------- */
+    :root {
+      --color-primary: #b13e3e;
+      --color-primary-light: #d96c6c;
+      --color-primary-dark: #7a2525;
+      --color-bg: #f9f7f4;
+      --color-surface: #ffffff;
+      --color-text: #1e1e1e;
+      --color-text-secondary: #4a4a4a;
+      --color-text-tertiary: #7a7a7a;
+      --color-border: #e2ddd7;
+      --radius-card: 16px;
+      --radius-btn: 40px;
+      --radius-tag: 20px;
+      --radius-banner: 12px;
+      --shadow-default: 0 4px 12px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.08);
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      --max-width: 1360px;
+      --header-height: 64px;
+      --announcement-height: 40px;
+      --sticky-offset: calc(var(--header-height) + var(--announcement-height));
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--sticky-offset);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: var(--sticky-offset);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* ---------- 吸顶公告条 ---------- */
+    .announcement-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--announcement-height);
+      background-color: var(--color-primary-dark);
+      color: #fff;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 0 16px;
+    }
+
+    .announcement-content {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .announcement-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .announcement-badge {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* ---------- 吸顶页头 ---------- */
+    .page-header {
+      position: fixed;
+      top: var(--announcement-height);
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      background-color: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--color-primary-dark);
+    }
+
+    .brand svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .theme-nav {
+      display: flex;
+      gap: 28px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+    }
+
+    .theme-nav a:hover {
+      color: var(--color-primary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .search-toggle {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-btn);
+      padding: 8px 16px;
+      font-size: 14px;
+      color: var(--color-text-tertiary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--color-text);
+    }
+
+    /* ---------- 主容器与布局 ---------- */
+    .main-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
+      gap: 28px;
+    }
+
+    /* ---------- 首屏 ---------- */
+    .hero-section {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #f3ede8 0%, #faf8f6 100%);
+      border-radius: var(--radius-card);
+      padding: 48px 40px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      min-height: 280px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .hero-content h1 {
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--color-primary-dark);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--color-text-secondary);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 15px;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--color-primary);
+      color: var(--color-primary);
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 15px;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--color-primary);
+      color: #fff;
+    }
+
+    .hero-visual {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 300px;
+      height: 200px;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    /* ---------- 左频道栏 ---------- */
+    .channel-sidebar {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: 20px 12px;
+      box-shadow: var(--shadow-default);
+      height: fit-content;
+      position: sticky;
+      top: var(--sticky-offset);
+    }
+
+    .channel-sidebar h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-tertiary);
+      margin-bottom: 16px;
+      padding-left: 8px;
+    }
+
+    .channel-list li {
+      margin-bottom: 4px;
+    }
+
+    .channel-list a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      transition: background-color 0.15s;
+    }
+
+    .channel-list a:hover,
+    .channel-list a.active {
+      background-color: var(--color-bg);
+      color: var(--color-primary);
+    }
+
+    /* ---------- 主内容区 ---------- */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    /* 通用板块样式 */
+    .section-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--color-text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 22px;
+      background: var(--color-primary);
+      border-radius: 2px;
+    }
+
+    /* 概览板块 */
+    .overview-text {
+      font-size: 15px;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+
+    /* 精选卡片网格 */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .featured-card {
+      background: var(--color-bg);
+      border-radius: 12px;
+      padding: 16px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .featured-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .card-tag {
+      display: inline-block;
+      background: var(--color-primary-light);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: var(--radius-tag);
+      margin-bottom: 10px;
+    }
+
+    .featured-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .card-meta {
+      font-size: 12px;
+      color: var(--color-text-tertiary);
+      display: flex;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 最新更新列表 */
+    .update-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .update-list li:last-child {
+      border-bottom: none;
+    }
+
+    .update-date {
+      font-size: 12px;
+      color: var(--color-text-tertiary);
+      min-width: 70px;
+    }
+
+    .update-content {
+      flex: 1;
+    }
+
+    .update-content strong {
+      font-size: 15px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .update-content p {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .category-item {
+      background: var(--color-bg);
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background-color 0.15s;
+    }
+
+    .category-item:hover {
+      background-color: var(--color-primary-light);
+      color: #fff;
+    }
+
+    /* 深度解析 */
+    .deep-dive h3 {
+      font-size: 18px;
+      margin: 24px 0 12px;
+      color: var(--color-primary-dark);
+    }
+
+    .deep-dive p {
+      font-size: 15px;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .deep-dive ul {
+      padding-left: 20px;
+      list-style: disc;
+      margin-bottom: 16px;
+      color: var(--color-text-secondary);
+    }
+
+    .deep-dive li {
+      margin-bottom: 6px;
+      line-height: 1.7;
+    }
+
+    /* FAQ */
+    .faq-list details {
+      border-bottom: 1px solid var(--color-border);
+      padding: 14px 0;
+    }
+
+    .faq-list summary {
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      color: var(--color-text);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-list summary::after {
+      content: '+';
+      font-size: 20px;
+      color: var(--color-text-tertiary);
+    }
+
+    .faq-list details[open] summary::after {
+      content: '−';
+    }
+
+    .faq-list p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      padding-right: 24px;
+    }
+
+    /* 用户评论 */
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .comment-item {
+      background: var(--color-bg);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .comment-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .comment-nickname {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .comment-text {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 相关资讯 */
+    .news-list li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .news-list li:last-child {
+      border-bottom: none;
+    }
+
+    .news-title {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .news-meta {
+      font-size: 12px;
+      color: var(--color-text-tertiary);
+      margin-bottom: 6px;
+    }
+
+    .news-summary {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+    }
+
+    /* 相关推荐 */
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag-item {
+      background: var(--color-bg);
+      padding: 6px 14px;
+      border-radius: var(--radius-tag);
+      font-size: 13px;
+      font-weight: 500;
+      transition: background-color 0.15s;
+    }
+
+    .tag-item:hover {
+      background-color: var(--color-primary-light);
+      color: #fff;
+    }
+
+    /* 补充板块 - 榜单 */
+    .ranking-list li {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--color-border);
+      gap: 12px;
+    }
+
+    .ranking-list li:last-child {
+      border-bottom: none;
+    }
+
+    .rank-num {
+      width: 24px;
+      height: 24px;
+      background: var(--color-primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .rank-name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .rank-info {
+      font-size: 12px;
+      color: var(--color-text-tertiary);
+      margin-left: auto;
+    }
+
+    /* ---------- 右辅助栏 ---------- */
+    .aux-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: sticky;
+      top: var(--sticky-offset);
+      height: fit-content;
+    }
+
+    .aux-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .aux-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .hot-list li {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .hot-list li:last-child {
+      border-bottom: none;
+    }
+
+    .hot-index {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--color-primary-light);
+      min-width: 24px;
+    }
+
+    .hot-title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hot-meta {
+      font-size: 12px;
+      color: var(--color-text-tertiary);
+    }
+
+    /* 投稿互动 */
+    .contribute-box {
+      text-align: center;
+    }
+
+    .contribute-box p {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .btn-small {
+      background: var(--color-primary);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .btn-small:hover {
+      background: var(--color-primary-dark);
+    }
+
+    /* ---------- 页尾 ---------- */
+    .page-footer {
+      background: #1e1e1e;
+      color: #ccc;
+      padding: 48px 24px 24px;
+      margin-top: 48px;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 32px;
+    }
+
+    .footer-brand {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .footer-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #aaa;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .footer-col li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 24px;
+      font-size: 13px;
+      color: #888;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ---------- 搜索浮层 ---------- */
+    .search-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-overlay.active {
+      display: flex;
+    }
+
+    .search-box {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: var(--color-primary);
+    }
+
+    .search-results {
+      margin-top: 16px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .search-result-item {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 14px;
+    }
+
+    /* ---------- 回到顶部 ---------- */
+    .back-to-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 48px;
+      height: 48px;
+      background: var(--color-primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: var(--shadow-hover);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 90;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 1024px) {
+      .layout-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .channel-sidebar {
+        display: none;
+      }
+
+      .aux-sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-content h1 {
+        font-size: 28px;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .theme-nav {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .aux-sidebar {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-section {
+        padding: 32px 24px;
+      }
+
+      .hero-content h1 {
+        font-size: 24px;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .announcement-content {
+        gap: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announcement-bar">
+    <div class="announcement-content">
+      <div class="announcement-item">
+        <span class="announcement-badge">2026-11-05</span>
+        <span>《大国博弈下的芯片突围》深度解析上线</span>
+      </div>
+      <div class="announcement-item">
+        <span class="announcement-badge">8</span>
+        <span>个新专题已更新</span>
+      </div>
+      <div class="announcement-item">
+        <span class="announcement-badge">占豪纵横谈一大参考完整版</span>
+        <span>主题参考</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="page-header">
+    <div class="header-inner">
+      <div class="brand">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="#7a2525" stroke-width="2"/>
+          <path d="M16 6 L20 14 L16 12 L12 14 Z" fill="#b13e3e"/>
+          <path d="M10 18 L16 26 L22 18" stroke="#b13e3e" stroke-width="2" fill="none"/>
+        </svg>
+        <span>占豪纵横谈一大参考完整版</span>
+      </div>
+      <nav class="theme-nav">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选</a>
+        <a href="/#updates">最新</a>
+        <a href="/#categories">分类</a>
+        <a href="/#deep-dive">深度</a>
+        <a href="/#faq">问答</a>
+      </nav>
+      <div class="header-actions">
+        <button class="search-toggle" id="searchToggle">🔍 搜索</button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 搜索浮层 -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="搜索条目、类型或关键词…" autofocus>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- 主容器 -->
+  <div class="main-container">
+    <!-- 首屏 -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>占豪纵横谈一大参考完整版</h1>
+        <p class="hero-desc">汇聚大国博弈、宏观政经与产业变局的深度解读。从芯片突围到能源棋局，从货币政策到地缘冲突，提供多角度的参考视角与可追溯的动态。</p>
+        <div class="hero-actions">
+          <a href="/#featured" class="btn-primary">开始阅读</a>
+          <a href="/#deep-dive" class="btn-outline">深度解析</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg viewBox="0 0 300 200" fill="none">
+          <path d="M0 150 Q75 100 150 150 T300 150" stroke="#b13e3e" stroke-width="2" fill="none" opacity="0.5"/>
+          <circle cx="150" cy="100" r="60" stroke="#b13e3e" stroke-width="1" fill="none" opacity="0.3"/>
+          <circle cx="150" cy="100" r="30" fill="#b13e3e" opacity="0.1"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 三栏布局网格 -->
+    <div class="layout-grid">
+      <!-- 左频道栏 -->
+      <aside class="channel-sidebar">
+        <h2>频道索引</h2>
+        <ul class="channel-list">
+          <li><a href="/#overview" class="active">领域概览</a></li>
+          <li><a href="/#featured">精选推荐</a></li>
+          <li><a href="/#updates">最新动态</a></li>
+          <li><a href="/#categories">分类入口</a></li>
+          <li><a href="/#deep-dive">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#tags">相关推荐</a></li>
+          <li><a href="/#ranking">热门榜单</a></li>
+          <li><a href="/#contribute">投稿互动</a></li>
+        </ul>
+      </aside>
+
+      <!-- 中主内容 -->
+      <main class="main-content">
+        <!-- 1. 主题领域概览 -->
+        <section id="overview" class="section-card">
+          <h2 class="section-title">地缘政经与产业变局观察</h2>
+          <div class="overview-text">
+            <p>当下全球政经格局围绕几条主线展开：半导体供应链重组、能源转型博弈、主要经济体的货币政策分化，以及区域冲突对大宗商品的影响。芯片领域，先进制程的出口管制与国产替代同时加速，2026年三季度全球半导体设备支出同比增长12%，其中中国大陆占比升至28%。能源方面，OPEC+减产协议延期至2027年，而欧洲天然气库存已降至五年均值以下。货币政策上，美联储在2026年9月降息25个基点后进入观望，人民币汇率在7.1—7.3区间波动。</p>
+            <p>地缘层面，红海航运风险溢价仍未消退，苏伊士运河通行量较2025年同期下降19%。这些变化直接影响国内制造业成本与出口节奏，也塑造了新的投资叙事。值得关注的具体方向包括：先进封装技术突破、储能电池产能出清、跨境支付系统替代、以及关键矿产的供应链安全。</p>
+          </div>
+        </section>
+
+        <!-- 2. 精选内容推荐 -->
+        <section id="featured" class="section-card">
+          <h2 class="section-title">近期精选条目</h2>
+          <div class="featured-grid">
+            <div class="featured-card">
+              <span class="card-tag">芯片</span>
+              <h3>国产先进封装产线落地</h3>
+              <div class="card-meta"><span>2026-11-03</span><span>热度 892</span></div>
+              <p class="card-desc">长电科技与通富微电在2.5D封装上取得良率突破，为AI芯片国产化提供关键支撑，设备清单和客户验证进度已披露。</p>
+            </div>
+            <div class="featured-card">
+              <span class="card-tag">能源</span>
+              <h3>OPEC+延长减产至2027年</h3>
+              <div class="card-meta"><span>2026-11-01</span><span>热度 764</span></div>
+              <p class="card-desc">沙特与俄罗斯主导的减产协议再延一年，但内部配额执行率降至92%，伊拉克与阿联酋的增产诉求成为变量。</p>
+            </div>
+            <div class="featured-card">
+              <span class="card-tag">货币政策</span>
+              <h3>美联储9月降息后的路径分歧</h3>
+              <div class="card-meta"><span>2026-10-28</span><span>热度 1103</span></div>
+              <p class="card-desc">点阵图显示2027年利率中值降至3.4%，但鲍威尔强调数据依赖。市场与联储对通胀回落速度的判断相差0.3个百分点。</p>
+            </div>
+            <div class="featured-card">
+              <span class="card-tag">地缘</span>
+              <h3>红海航运保费上涨40%</h3>
+              <div class="card-meta"><span>2026-10-25</span><span>热度 658</span></div>
+              <p class="card-desc">伦敦保险市场将红海战争险费率上调至船体价值的0.8%，多家班轮公司绕行好望角，亚欧航线运价环比上涨22%。</p>
+            </div>
+            <div class="featured-card">
+              <span class="card-tag">产业</span>
+              <h3>储能电池产能出清信号</h3>
+              <div class="card-meta"><span>2026-10-22</span><span>热度 521</span></div>
+              <p class="card-desc">2026年三季度国内储能电芯价格跌破0.4元/Wh，二三线厂商开工率不足40%，头部企业海外订单占比升至35%。</p>
+            </div>
+            <div class="featured-card">
+              <span class="card-tag">金融</span>
+              <h3>跨境支付系统CIPS交易量</h3>
+              <div class="card-meta"><span>2026-10-20</span><span>热度 947</span></div>
+              <p class="card-desc">2026年前三季度CIPS处理业务金额同比增长34%，参与机构突破1500家，但美元结算占比仍超80%。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. 最新更新 -->
+        <section id="updates" class="section-card">
+          <h2 class="section-title">最新动态与快讯</h2>
+          <ul class="update-list">
+            <li><span class="update-date">2026-11-07</span><div class="update-content"><strong>商务部回应半导体出口管制新规</strong><p>针对美国10月更新的出口管制清单，商务部表示将采取必要措施维护企业权益，涉及12家实体。</p></div></li>
+            <li><span class="update-date">2026-11-06</span><div class="update-content"><strong>欧盟碳边境调节机制过渡期结束</strong><p>CBAM正式进入征税阶段，覆盖钢铁、铝、水泥等六大品类，中国出口企业需提交碳排放报告。</p></div></li>
+            <li><span class="update-date">2026-11-05</span><div class="update-content"><strong>央行下调支农支小再贷款利率</strong><p>一年期再贷款利率由2.0%降至1.75%，释放约800亿元低成本资金，定向支持小微制造业。</p></div></li>
+            <li><span class="update-date">2026-11-04</span><div class="update-content"><strong>沙特阿美下调亚洲原油售价</strong><p>12月装船的阿拉伯轻质原油官价下调0.5美元/桶，反映亚洲需求疲软与份额竞争加剧。</p></div></li>
+            <li><span class="update-date">2026-11-03</span><div class="update-content"><strong>国产大飞机C919新增订单</strong><p>东航、国航各增订20架，累计订单达1061架，2026年交付目标为15架，产能爬坡中。</p></div></li>
+            <li><span class="update-date">2026-11-02</span><div class="update-content"><strong>美国10月非农就业新增15万</strong><p>失业率升至4.1%，时薪同比增3.8%，数据公布后市场对12月降息预期升至65%。</p></div></li>
+            <li><span class="update-date">2026-11-01</span><div class="update-content"><strong>国家能源局发布新型储能装机数据</strong><p>截至9月底全国新型储能装机达58.7GW，同比增长86%，独立储能占比首次超过50%。</p></div></li>
+            <li><span class="update-date">2026-10-31</span><div class="update-content"><strong>日本央行维持YCC政策</strong><p>10月会议维持10年期国债收益率目标区间-0.1%至0.1%，日元兑美元跌破152关口。</p></div></li>
+          </ul>
+        </section>
+
+        <!-- 4. 分类入口 -->
+        <section id="categories" class="section-card">
+          <h2 class="section-title">内容分类</h2>
+          <div class="category-grid">
+            <a href="/#featured" class="category-item">芯片半导体</a>
+            <a href="/#featured" class="category-item">能源与大宗</a>
+            <a href="/#featured" class="category-item">货币政策</a>
+            <a href="/#featured" class="category-item">地缘政治</a>
+            <a href="/#featured" class="category-item">产业升级</a>
+            <a href="/#featured" class="category-item">跨境金融</a>
+            <a href="/#featured" class="category-item">供应链安全</a>
+            <a href="/#featured" class="category-item">宏观数据</a>
+          </div>
+        </section>
+
+        <!-- 5. 深度解析 -->
+        <section id="deep-dive" class="section-card deep-dive">
+          <h2 class="section-title">深度解析：芯片突围与能源棋局</h2>
+          <h3>先进封装为何成为焦点</h3>
+          <p>芯片制程逼近2nm后，晶体管微缩的边际成本急剧上升。2026年台积电3nm产能利用率不足70%，而先进封装（2.5D/3D）的产能却供不应求。长电科技在11月3日披露，其2.5D封装良率已达92%，月产能规划1.2万片，主要客户包括寒武纪和华为海思。通富微电则聚焦Chiplet方案，与AMD的合作订单排至2027年二季度。</p>
+          <p>判断封装环节的突破是否扎实，可以核对三个指标：一是硅中介层（Interposer）的国产化率，目前仍依赖进口，但甬矽电子已开始小批量验证；二是设备清单中是否包含ASML的光刻机，封装环节对光刻要求较低，国产替代空间更大；三是客户验证周期，从送样到量产通常需要9—12个月，长电的客户导入进度比市场预期快了约一个季度。</p>
+          <h3>OPEC+减产的实际执行率</h3>
+          <p>减产协议延长至2027年底，但11月1日OPEC秘书处数据显示，10月整体执行率降至92%，其中伊拉克配额执行率仅85%，阿联酋为88%。沙特自身减产执行率保持在100%，但财政盈亏平衡油价已升至96美元/桶，持续减产对其外汇储备形成压力。伊朗和委内瑞拉的增产部分抵消了沙特的努力，两国合计产量较年初增加45万桶/日。</p>
+          <ul>
+            <li>已公开事实：OPEC+ 11月会议决定延长减产至2027年底，沙特自愿额外减产100万桶/日。</li>
+            <li>当事人回应：伊拉克石油部称将在11月补偿性减产，但未给出具体数字。</li>
+            <li>媒体转述：路透社援引OPEC代表称，内部对2027年产量基线存在分歧。</li>
+          </ul>
+          <h3>红海航运风险的传导链条</h3>
+          <p>红海危机进入第19个月，伦敦保险市场将战争险费率上调至船体价值的0.8%，而2025年同期为0.5%。保费上涨直接推高亚欧航线成本，马士基和赫伯罗特已宣布绕行好望角，单程增加约10天航程。传导到国内制造业，出口欧洲的电子产品和汽车零部件到岸价平均上涨4%—6%。</p>
+          <p>判断风险是否缓解，可以盯住三个信号：一是苏伊士运河周通行船舶数量，目前为日均32艘，低于2025年同期的44艘；二是上海出口集装箱运价指数（SCFI）欧洲航线，11月7日报1580美元/TEU，较10月上涨22%；三是也门胡塞武装的袭击频率，10月共发生7起，较9月的12起有所下降。</p>
+        </section>
+
+        <!-- 6. 体验指南 -->
+        <section id="guide" class="section-card">
+          <h2 class="section-title">阅读路径与判断依据</h2>
+          <p style="font-size:15px;color:var(--color-text-secondary);line-height:1.8;margin-bottom:16px;">面对大量政经信息，先看数据发布类条目（如央行操作、OPEC月报），这些有明确时间表和可验证数字；再看事件驱动类（如出口管制、地缘冲突），关注当事方回应和后续动作；最后看分析评论，用来对照自己的判断。</p>
+          <ul style="padding-left:20px;list-style:disc;color:var(--color-text-secondary);line-height:1.8;">
+            <li>比较两个芯片封装项目时，先看客户验证名单，再看设备国产化率，最后看产能爬坡时间表。</li>
+            <li>评估能源减产影响，核对OPEC月报中的执行率数字，而非只看新闻标题。</li>
+            <li>对于货币政策的解读，区分点阵图（预测）和实际利率决议（事实）。</li>
+          </ul>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section id="faq" class="section-card">
+          <h2 class="section-title">常见问答</h2>
+          <div class="faq-list">
+            <details>
+              <summary>2.5D封装和3D封装有什么区别？</summary>
+              <p>2.5D封装通过硅中介层将多个芯片并排放置，互连密度高但面积较大；3D封装则是将芯片垂直堆叠，互连更短、功耗更低，但散热和良率挑战更大。目前AI芯片多用2.5D方案，如英伟达H100；存储芯片则倾向3D堆叠。</p>
+            </details>
+            <details>
+              <summary>OPEC+的减产执行率是怎么计算的？</summary>
+              <p>以2018年10月的产量为基准，各成员国按配额减产。执行率=实际减产量/承诺减产量。伊拉克10月产量为每日428万桶，配额为400万桶，执行率约为85%。数据来源于OPEC二手来源（如标普全球普氏）。</p>
+            </details>
+            <details>
+              <summary>红海战争险费率上涨对货主有什么影响？</summary>
+              <p>战争险通常由船东投保，但成本会通过附加费转嫁给货主。目前每20英尺集装箱的战争险附加费约为120美元，较年初上涨80美元。货主可对比绕行好望角的运费增量与附加费，选择成本更低的方案。</p>
+            </details>
+            <details>
+              <summary>美联储点阵图对投资决策参考价值多大？</summary>
+              <p>点阵图反映的是联储官员对利率路径的预测，并非承诺。2026年9月点阵图显示2027年利率中值3.4%，但市场期货隐含利率为3.1%，两者差异反映对通胀回落速度的判断不同。历史看，点阵图在经济转折期误差较大。</p>
+            </details>
+            <details>
+              <summary>国产储能电池产能出清需要多久？</summary>
+              <p>参考光伏行业的出清周期，通常需要12—18个月。2026年三季度储能电芯价格已跌破0.4元/Wh，二三线厂商现金流紧张，预计2027年二季度前会有部分企业退出。头部企业靠海外订单和储能系统集成维持利润。</p>
+            </details>
+            <details>
+              <summary>CIPS和SWIFT的主要区别是什么？</summary>
+              <p>CIPS是人民币跨境支付系统，以人民币为结算币种，采用实时全额结算；SWIFT是报文传输系统，不涉及资金清算。CIPS参与机构1500余家，但美元结算仍通过代理行完成，人民币占比约15%。</p>
+            </details>
+          </div>
+        </section>
+
+        <!-- 8. 用户评论 -->
+        <section id="comments" class="section-card">
+          <h2 class="section-title">用户评论</h2>
+          <div class="comment-list">
+            <div class="comment-item"><div class="comment-header"><span class="comment-nickname">老船长</span></div><div class="comment-text">长电那个2.5D封装良率92%，我查了他们的投资者关系记录，确实是真的，但客户验证名单里没看到英伟达，主要还是国内AI芯片公司。</div></div>
+            <div class="comment-item"><div class="comment-header"><span class="comment-nickname">北纬三十度</span></div><div class="comment-text">OPEC执行率降了，伊拉克又在偷偷增产，每次都是这样。沙特的财政压力很大，我看他们外汇储备从2025年的4500亿降到4100亿了。</div></div>
+            <div class="comment-item"><div class="comment-header"><span class="comment-nickname">数据矿工</span></div><div class="comment-text">红海保费涨到0.8%，货代报价单上附加费确实多了，我们公司出口德国的机械配件成本涨了5%左右。</div></div>
+            <div class="comment-item"><div class="comment-header"><span class="comment-nickname">韭菜盒子</span></div><div class="comment-text">美联储降息预期变来变去，9月降了25个基点，现在又说12月可能不降，玩呢。</div></div>
+            <div class="comment-item"><div class="comment-header"><span class="comment-nickname">半导体民工</span></div><div class="comment-text">通富微电和AMD绑得深，但AMD自己也在找台积电做封装，风险不小。甬矽的硅中介层还在验证，别太乐观。</div></div>
+            <div class="comment-item"><div class="comment-header"><span class="comment-nickname">能源小兵</span></div><div class="comment-text">储能电芯价格跌破0.4元/Wh，朋友圈里做储能的朋友都在转行，产能出清比想象中惨烈。</div></div>
+            <div class="comment-item"><div class="comment-header"><span class="comment-nickname">汇率观察者</span></div><div class="comment-text">CIPS增长快但美元占比还是高，人民币国际化路还长。不过1500家参与机构已经不错了。</div></div>
+            <div class="comment-item"><div class="comment-header"><span class="comment-nickname">吃瓜群众</span></div><div class="comment-text">红海绕行好望角，运费涨了，最后还不是消费者买单。欧洲那边通胀又要起来。</div></div>
+            <div class="comment-item"><div class="comment-header"><span class="comment-nickname">芯片老兵</span></div><div class="comment-text">先进封装确实是弯道超车的机会，光刻机卡脖子，封装环节国产化率高一些。长电的产能爬坡速度还行。</div></div>
+            <div class="comment-item"><div class="comment-header"><span class="comment-nickname">宏观笔记</span></div><div class="comment-text">10月非农15万，失业率4.1%，数据不算差，但前两个月下修了，所以市场反应偏鸽。</div></div>
+            <div class="comment-item"><div class="comment-header"><span class="comment-nickname">光伏转储能</span></div><div class="comment-text">储能出清比光伏还快，因为电芯技术迭代慢，二三线厂商没机会。头部企业海外订单确实多。</div></div>
+            <div class="comment-item"><div class="comment-header"><span class="comment-nickname">路人甲</span></div><div class="comment-text">这些分析看着累，但比看短视频强。至少数据有来源。</div></div>
+            <div class="comment-item"><div class="comment-header"><span class="comment-nickname">老K</span></div><div class="comment-text">沙特阿美下调亚洲售价，说明亚洲需求真的不行，中国买盘也在放缓。</div></div>
+            <div class="comment-item"><div class="comment-header"><span class="comment-nickname">财经学生</span></div><div class="comment-text">点阵图那个，2027年3.4%中值，市场3.1%，差了30个基点，其实就是联储偏鹰，市场偏鸽。</div></div>
+          </div>
+        </section>
+
+        <!-- 9. 相关资讯 -->
+        <section id="news" class="section-card">
+          <h2 class="section-title">相关资讯</h2>
+          <ul class="news-list">
+            <li><div class="news-title">美国商务部更新出口管制清单，新增12家中国实体</div><div class="news-meta">2026-11-06</div><div class="news-summary">新清单涉及芯片设计软件和第三代半导体材料，11月15日生效。被列实体可在30天内提出申诉。</div></li>
+            <li><div class="news-title">欧盟碳边境调节机制正式征税，覆盖六大品类</div><div class="news-meta">2026-11-05</div><div class="news-summary">CBAM过渡期于10月底结束，11月1日起进口商需购买CBAM证书。中国钢铁企业已开始核算碳排放数据。</div></li>
+            <li><div class="news-title">央行下调支农支小再贷款利率至1.75%</div><div class="news-meta">2026-11-04</div><div class="news-summary">此次下调25个基点，为2026年第二次。预计释放800亿元低成本资金，重点支持小微制造业和农业设施。</div></li>
+            <li><div class="news-title">OPEC+ 10月减产执行率降至92%，伊拉克拖累整体</div><div class="news-meta">2026-11-03</div><div class="news-summary">OPEC月报显示伊拉克产量超配额28万桶/日，阿联酋超12万桶/日。沙特执行率保持100%。</div></li>
+            <li><div class="news-title">国产大飞机C919累计订单达1061架，东航增订20架</div><div class="news-meta">2026-11-02</div><div class="news-summary">2026年交付目标15架，目前交付8架。产能爬坡受限于发动机供应，国产发动机CJ-1000A预计2027年装机。</div></li>
+            <li><div class="news-title">美国10月非农新增15万，失业率升至4.1%</div><div class="news-meta">2026-11-01</div><div class="news-summary">时薪同比增3.8%，低于预期的4.0%。8月和9月数据合计下修4.2万。数据公布后美债收益率下行。</div></li>
+          </ul>
+        </section>
+
+        <!-- 10. 相关推荐 -->
+        <section id="tags" class="section-card">
+          <h2 class="section-title">相关推荐</h2>
+          <div class="tag-cloud">
+            <a href="/#featured" class="tag-item">2.5D封装良率</a>
+            <a href="/#featured" class="tag-item">OPEC+减产执行率</a>
+            <a href="/#featured" class="tag-item">红海战争险费率</a>
+            <a href="/#featured" class="tag-item">美联储点阵图</a>
+            <a href="/#featured" class="tag-item">储能电芯价格</a>
+            <a href="/#featured" class="tag-item">CIPS交易量</a>
+            <a href="/#featured" class="tag-item">CBAM碳关税</a>
+            <a href="/#featured" class="tag-item">C919交付进度</a>
+          </div>
+        </section>
+
+        <!-- 11. 补充板块：热门榜单 -->
+        <section id="ranking" class="section-card">
+          <h2 class="section-title">本周热门参考条目</h2>
+          <ul class="ranking-list">
+            <li><span class="rank-num">1</span><span class="rank-name">国产2.5D封装良率突破92%</span><span class="rank-info">热度 1203</span></li>
+            <li><span class="rank-num">2</span><span class="rank-name">美联储9月降息后路径分歧</span><span class="rank-info">热度 1103</span></li>
+            <li><span class="rank-num">3</span><span class="rank-name">红海航运保费上涨40%</span><span class="rank-info">热度 947</span></li>
+            <li><span class="rank-num">4</span><span class="rank-name">OPEC+减产延长至2027年</span><span class="rank-info">热度 892</span></li>
+            <li><span class="rank-num">5</span><span class="rank-name">储能电池产能出清信号</span><span class="rank-info">热度 764</span></li>
+            <li><span class="rank-num">6</span><span class="rank-name">跨境支付CIPS交易量增34%</span><span class="rank-info">热度 658</span></li>
+          </ul>
+        </section>
+
+        <!-- 投稿互动 -->
+        <section id="contribute" class="section-card">
+          <h2 class="section-title">投稿与交流</h2>
+          <div class="contribute-box">
+            <p>欢迎分享您对芯片、能源、货币政策等领域的观察或数据线索。优质内容将有机会在专题中展示。</p>
+            <a href="/#contribute" class="btn-small">提交稿件</a>
+          </div>
+        </section>
+      </main>
+
+      <!-- 右辅助栏 -->
+      <aside class="aux-sidebar">
+        <div class="aux-card">
+          <h3>热榜速览</h3>
+          <ul class="hot-list">
+            <li><span class="hot-index">01</span><div><div class="hot-title">先进封装产能争夺</div><div class="hot-meta">11月7日更新</div></div></li>
+            <li><span class="hot-index">02</span><div><div class="hot-title">OPEC+内部配额分歧</div><div class="hot-meta">11月6日更新</div></div></li>
+            <li><span class="hot-index">03</span><div><div class="hot-title">红海绕行成本测算</div><div class="hot-meta">11月5日更新</div></div></li>
+            <li><span class="hot-index">04</span><div><div class="hot-title">美联储12月降息概率</div><div class="hot-meta">11月4日更新</div></div></li>
+            <li><span class="hot-index">05</span><div><div class="hot-title">储能电芯价格走势</div><div class="hot-meta">11月3日更新</div></div></li>
+          </ul>
+        </div>
+        <div class="aux-card">
+          <h3>专题互动</h3>
+          <p style="font-size:14px;color:var(--color-text-secondary);margin-bottom:12px;">上传您的分析图表或数据笔记，参与每周话题讨论。</p>
+          <a href="/#contribute" class="btn-small">立即参与</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">占豪纵横谈一大参考完整版</div>
+          <p class="footer-desc">内容覆盖2026年9月至11月的政经动态与产业变局，包括快讯、深度解析、数据榜单与用户讨论。更新节奏为每日快讯、每周深度。</p>
+        </div>
+        <div class="footer-col">
+          <h4>栏目</h4>
+          <ul>
+            <li><a href="/#overview">领域概览</a></li>
+            <li><a href="/#featured">精选推荐</a></li>
+            <li><a href="/#updates">最新动态</a></li>
+            <li><a href="/#deep-dive">深度解析</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>互动</h4>
+          <ul>
+            <li><a href="/#comments">用户评论</a></li>
+            <li><a href="/#contribute">投稿交流</a></li>
+            <li><a href="/#ranking">热门榜单</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>关于</h4>
+          <ul>
+            <li><a href="/#faq">常见问答</a></li>
+            <li><a href="/#tags">相关推荐</a></li>
+            <li><a href="/#news">相关资讯</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 占豪纵横谈一大参考完整版 · 内容仅供参考</span>
+        <span>更新时间：2026-11-08</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 回到顶部按钮 -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+  <!-- 内联脚本 -->
+  <script>
+    (function() {
+      // 搜索开关
+      const searchToggle = document.getElementById('searchToggle');
+      const searchOverlay = document.getElementById('searchOverlay');
+      const searchInput = document.getElementById('searchInput');
+      const searchResults = document.getElementById('searchResults');
+
+      searchToggle.addEventListener('click', function() {
+        searchOverlay.classList.toggle('active');
+        if (searchOverlay.classList.contains('active')) {
+          searchInput.focus();
+        }
+      });
+
+      searchOverlay.addEventListener('click', function(e) {
+        if (e.target === searchOverlay) {
+          searchOverlay.classList.remove('active');
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+          searchOverlay.classList.remove('active');
+        }
+      });
+
+      // 简单搜索（基于页面可见文本）
+      searchInput.addEventListener('input', function() {
+        const query = this.value.trim().toLowerCase();
+        if (!query) {
+          searchResults.innerHTML = '';
+          return;
+        }
+        const sections = document.querySelectorAll('.section-card, .featured-card, .update-list li, .news-list li');
+        let results = [];
+        sections.forEach(el => {
+          const text = el.textContent.toLowerCase();
+          if (text.includes(query)) {
+            const titleEl = el.querySelector('h2, h3, .news-title, .update-content strong');
+            const title = titleEl ? titleEl.textContent : el.textContent.slice(0, 40);
+            if (title && !results.some(r => r.title === title)) {
+              results.push({ title, el });
+            }
+          }
+        });
+        if (results.length === 0) {
+          searchResults.innerHTML = '<div style="padding:12px;color:#999;">没有找到相关内容，试试其他关键词。</div>';
+        } else {
+          searchResults.innerHTML = results.map(r => `<div class="search-result-item">${r.title}</div>`).join('');
+        }
+      });
+
+      // 回到顶部
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 移动端菜单（简单处理：滚动到导航区域，不实现抽屉，导航在移动端已隐藏，可返回顶部）
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      mobileMenuBtn.addEventListener('click', function() {
+        // 移动端导航隐藏，点击回到顶部或提示
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 侧栏高亮（简单实现）
+      const channelLinks = document.querySelectorAll('.channel-list a');
+      const sections = document.querySelectorAll('section[id]');
+      window.addEventListener('scroll', function() {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
+        channelLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '/#' + current) {
+            link.classList.add('active');
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "占豪纵横谈一大参考完整版",
+    "description": "聚焦大国博弈、宏观政经与产业变局的深度解析与动态聚合",
+    "url": ""
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "2.5D封装和3D封装有什么区别？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2.5D封装通过硅中介层将多个芯片并排放置，互连密度高但面积较大；3D封装则是将芯片垂直堆叠，互连更短、功耗更低，但散热和良率挑战更大。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "OPEC+的减产执行率是怎么计算的？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "以2018年10月的产量为基准，各成员国按配额减产。执行率=实际减产量/承诺减产量。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "红海战争险费率上涨对货主有什么影响？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "战争险通常由船东投保，但成本会通过附加费转嫁给货主。每20英尺集装箱的战争险附加费约为120美元。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "美联储点阵图对投资决策参考价值多大？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "点阵图反映的是联储官员对利率路径的预测，并非承诺。历史看，点阵图在经济转折期误差较大。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "国产储能电池产能出清需要多久？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "参考光伏行业的出清周期，通常需要12—18个月。预计2027年二季度前会有部分企业退出。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "CIPS和SWIFT的主要区别是什么？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CIPS是人民币跨境支付系统，以人民币为结算币种；SWIFT是报文传输系统，不涉及资金清算。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+              </html>
