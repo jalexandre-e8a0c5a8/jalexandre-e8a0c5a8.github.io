@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日黑料在线观看 - 内娱爆料聚合与更新</title>
+  <meta name="description" content="每日黑料在线观看，聚合内娱八卦爆料、艺人争议与粉丝讨论。提供当日热门条目、事件时间线、深度解析和用户评论，适合关注娱乐圈动态的网友浏览。">
+  <meta name="keywords" content="每日黑料在线观看">
+  <style>
+    :root {
+      --primary: #b83b3b;
+      --primary-light: #f9e6e6;
+      --primary-dark: #8a2a2a;
+      --bg: #f7f5f2;
+      --surface: #ffffff;
+      --text-primary: #1e1e1e;
+      --text-secondary: #5e5e5e;
+      --text-tertiary: #8e8e8e;
+      --divider: #e3ddd6;
+      --card-radius: 16px;
+      --btn-radius: 10px;
+      --tag-radius: 6px;
+      --shadow-default: 0 4px 14px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+      --header-height: 64px;
+      --announce-height: 40px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--announce-height) + var(--header-height) + 16px);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* 吸顶公告条 */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--announce-height);
+      background: var(--primary-dark);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      font-size: 14px;
+      gap: 32px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
+    .announce-bar::-webkit-scrollbar { display: none; }
+    .announce-bar .brand-mini {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .announce-bar .announce-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .announce-bar .announce-date {
+      background: rgba(255, 255, 255, 0.18);
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    /* 吸顶页头 */
+    .site-header {
+      position: sticky;
+      top: var(--announce-height);
+      z-index: 99;
+      height: var(--header-height);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--divider);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      gap: 32px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .logo-svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .brand-text {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 4px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .header-nav::-webkit-scrollbar { display: none; }
+    .header-nav a {
+      padding: 8px 14px;
+      border-radius: var(--btn-radius);
+      font-size: 14px;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+    .header-nav a:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border-radius: 24px;
+      padding: 6px 14px;
+      border: 1px solid var(--divider);
+    }
+    .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 14px;
+      width: 140px;
+      color: var(--text-primary);
+    }
+    .search-box input::placeholder {
+      color: var(--text-tertiary);
+    }
+    .search-box button {
+      font-size: 13px;
+      color: var(--text-secondary);
+      padding: 4px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+      border-radius: var(--btn-radius);
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: 0.2s;
+    }
+
+    /* 移动端导航抽屉 */
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 200;
+    }
+    .mobile-nav-overlay.active {
+      display: block;
+    }
+    .mobile-nav-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 280px;
+      background: #fff;
+      z-index: 201;
+      padding: 24px 20px;
+      transform: translateX(100%);
+      transition: transform 0.25s ease;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .mobile-nav-panel.open {
+      transform: translateX(0);
+    }
+    .mobile-nav-panel .close-btn {
+      align-self: flex-end;
+      font-size: 24px;
+      color: var(--text-secondary);
+      padding: 4px 8px;
+      margin-bottom: 12px;
+    }
+    .mobile-nav-panel a {
+      padding: 12px 14px;
+      border-radius: var(--btn-radius);
+      font-size: 15px;
+      color: var(--text-primary);
+      transition: background 0.2s;
+    }
+    .mobile-nav-panel a:hover {
+      background: var(--primary-light);
+    }
+
+    /* 主题首屏 */
+    .hero {
+      background: linear-gradient(135deg, #fdf6f0 0%, #f9e8e0 100%);
+      padding: 48px 24px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-content h1 {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .hero-content .hero-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 28px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: var(--btn-radius);
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--primary-dark);
+      padding: 12px 28px;
+      border-radius: var(--btn-radius);
+      font-weight: 600;
+      font-size: 15px;
+      border: 1.5px solid var(--primary);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-outline:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-visual svg {
+      width: 100%;
+      max-width: 340px;
+      height: auto;
+    }
+
+    /* 主内容区三栏 */
+    .main-wrapper {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) 240px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* 左侧频道索引 */
+    .channel-sidebar {
+      position: sticky;
+      top: calc(var(--announce-height) + var(--header-height) + 20px);
+    }
+    .channel-sidebar h3 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-tertiary);
+      margin-bottom: 12px;
+    }
+    .channel-sidebar ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .channel-sidebar ul li a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: var(--btn-radius);
+      font-size: 14px;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s;
+      border-left: 3px solid transparent;
+    }
+    .channel-sidebar ul li a:hover,
+    .channel-sidebar ul li a.active {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-left-color: var(--primary);
+    }
+
+    /* 中间主内容 */
+    .content-main {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .section-block {
+      background: var(--surface);
+      border-radius: var(--card-radius);
+      padding: 28px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      margin-bottom: 20px;
+    }
+
+    /* 概览文字 */
+    .overview-text {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    .overview-text p {
+      margin-bottom: 12px;
+    }
+    .overview-text strong {
+      color: var(--text-primary);
+    }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .content-card {
+      background: var(--bg);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .content-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+    .content-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 14px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .card-type {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: var(--tag-radius);
+      align-self: flex-start;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--text-primary);
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card-meta {
+      display: flex;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .card-tags span {
+      background: #ede8e2;
+      color: var(--text-secondary);
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: var(--tag-radius);
+    }
+
+    /* 最新更新列表 */
+    .update-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .update-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: var(--btn-radius);
+      transition: background 0.2s;
+      font-size: 14px;
+    }
+    .update-list li:hover {
+      background: var(--bg);
+    }
+    .update-list .update-time {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+      width: 52px;
+    }
+    .update-list .update-name {
+      font-weight: 600;
+      color: var(--text-primary);
+      flex-shrink: 0;
+    }
+    .update-list .update-summary {
+      color: var(--text-secondary);
+      font-size: 13px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .category-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 18px 12px;
+      background: var(--bg);
+      border-radius: var(--card-radius);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-align: center;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .category-item:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    .category-item .cat-icon {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    /* 深度解析 */
+    .deep-dive {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+    }
+    .deep-dive h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 24px 0 10px;
+    }
+    .deep-dive h3:first-of-type {
+      margin-top: 0;
+    }
+    .deep-dive p {
+      margin-bottom: 14px;
+    }
+    .deep-dive ul {
+      margin: 8px 0 16px 20px;
+    }
+    .deep-dive li {
+      margin-bottom: 6px;
+    }
+    .deep-dive .highlight-box {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 0 var(--btn-radius) var(--btn-radius) 0;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+
+    /* 体验指南 */
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .guide-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .step-content h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .step-content p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .faq-list details {
+      background: var(--bg);
+      border-radius: var(--btn-radius);
+      padding: 0;
+      overflow: hidden;
+    }
+    .faq-list summary {
+      padding: 14px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-list summary::after {
+      content: '+';
+      font-size: 20px;
+      color: var(--text-tertiary);
+      transition: transform 0.2s;
+    }
+    .faq-list details[open] summary::after {
+      transform: rotate(45deg);
+    }
+    .faq-list details[open] summary {
+      background: var(--primary-light);
+    }
+    .faq-answer {
+      padding: 0 18px 16px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* 用户评论 */
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .comment-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--divider);
+    }
+    .comment-item:last-child {
+      border-bottom: none;
+    }
+    .comment-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .comment-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .comment-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .comment-nickname {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .comment-time {
+      font-size: 11px;
+      color: var(--text-tertiary);
+    }
+    .comment-text {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 相关资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .news-item {
+      display: flex;
+      gap: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--divider);
+    }
+    .news-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .news-item img {
+      width: 120px;
+      height: 80px;
+      border-radius: var(--btn-radius);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .news-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .news-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .news-date {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-bottom: 4px;
+    }
+    .news-summary {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 相关推荐标签 */
+    .related-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .related-tags a {
+      background: var(--bg);
+      padding: 8px 16px;
+      border-radius: 24px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s;
+    }
+    .related-tags a:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    /* 热门榜单 */
+    .rank-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      counter-reset: rank;
+    }
+    .rank-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: var(--btn-radius);
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    .rank-list li:hover {
+      background: var(--bg);
+    }
+    .rank-list li::before {
+      counter-increment: rank;
+      content: counter(rank);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--bg);
+      color: var(--text-tertiary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .rank-list li:nth-child(1)::before {
+      background: var(--primary);
+      color: #fff;
+    }
+    .rank-list li:nth-child(2)::before {
+      background: #e8a87c;
+      color: #fff;
+    }
+    .rank-list li:nth-child(3)::before {
+      background: #d4a373;
+      color: #fff;
+    }
+    .rank-name {
+      font-weight: 500;
+      color: var(--text-primary);
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .rank-heat {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      flex-shrink: 0;
+    }
+
+    /* 右侧辅助栏 */
+    .aux-sidebar {
+      position: sticky;
+      top: calc(var(--announce-height) + var(--header-height) + 20px);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .aux-card {
+      background: var(--surface);
+      border-radius: var(--card-radius);
+      padding: 20px;
+      box-shadow: var(--shadow-default);
+    }
+    .aux-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--text-primary);
+    }
+    .aux-card .aux-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .aux-card .aux-list li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .aux-card .aux-list li a {
+      transition: color 0.2s;
+    }
+    .aux-card .aux-list li a:hover {
+      color: var(--primary);
+    }
+    .aux-card .aux-list .aux-meta {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      margin-top: 2px;
+    }
+
+    /* 投稿互动区 */
+    .submit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .submit-card {
+      background: var(--bg);
+      border-radius: var(--card-radius);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .submit-card:hover {
+      background: var(--primary-light);
+    }
+    .submit-card .submit-icon {
+      font-size: 28px;
+    }
+    .submit-card h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .submit-card p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 页脚 */
+    .site-footer {
+      background: #1e1e1e;
+      color: #bbb;
+      padding: 48px 24px 32px;
+      margin-top: 32px;
+    }
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-brand h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #999;
+    }
+    .footer-col h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .footer-col ul li a {
+      font-size: 13px;
+      color: #999;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      max-width: 1360px;
+      margin: 32px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: #777;
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: var(--shadow-hover);
+      z-index: 90;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .back-to-top:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+    .back-to-top.visible {
+      display: flex;
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .main-wrapper {
+        grid-template-columns: minmax(0, 1fr) 240px;
+      }
+      .channel-sidebar {
+        display: none;
+      }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .hero-visual {
+        display: none;
+      }
+      .hero-content h1 {
+        font-size: 32px;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 740px) {
+      .main-wrapper {
+        grid-template-columns: 1fr;
+        padding: 16px 12px 40px;
+        gap: 24px;
+      }
+      .aux-sidebar {
+        position: static;
+      }
+      .header-nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .search-box {
+        display: none;
+      }
+      .hero {
+        padding: 32px 16px 28px;
+      }
+      .hero-content h1 {
+        font-size: 26px;
+      }
+      .hero-content .hero-desc {
+        font-size: 14px;
+      }
+      .section-block {
+        padding: 20px 16px;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .submit-grid {
+        grid-template-columns: 1fr;
+      }
+      .news-item {
+        flex-direction: column;
+      }
+      .news-item img {
+        width: 100%;
+        height: 160px;
+      }
+      .announce-bar {
+        gap: 20px;
+        padding: 0 16px;
+      }
+      .site-header {
+        padding: 0 16px;
+        gap: 16px;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .back-to-top {
+        bottom: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar" id="announceBar">
+    <span class="brand-mini">每日黑料在线观看</span>
+    <span class="announce-item">
+      <span class="announce-date">2026-11-08</span>
+      <span>“某顶流片场耍大牌”视频流出</span>
+    </span>
+    <span class="announce-item">
+      <span class="announce-date">2026-11-07</span>
+      <span>选秀节目《星动2026》退赛风波</span>
+    </span>
+    <span class="announce-item">
+      <span class="announce-date">2026-11-06</span>
+      <span>音乐节假唱鉴定音频曝光</span>
+    </span>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <div class="logo-area">
+      <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="9" fill="#b83b3b"/>
+        <path d="M10 13h16v2H10v-2zm0 5h16v2H10v-2zm0 5h10v2H10v-2z" fill="#fff"/>
+        <circle cx="27" cy="25" r="4" fill="#f9e6e6"/>
+        <path d="M25.5 25l1.2 1.2 2-2.3" stroke="#b83b3b" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-text">每日黑料在线观看</span>
+    </div>
+    <nav class="header-nav">
+      <a href="#overview">领域概览</a>
+      <a href="#picks">精选爆料</a>
+      <a href="#updates">实时更新</a>
+      <a href="#categories">分类索引</a>
+      <a href="#deepdive">深度解析</a>
+      <a href="#guide">消费指南</a>
+      <a href="#faq">常见问答</a>
+      <a href="#comments">网友评论</a>
+      <a href="#news">相关资讯</a>
+      <a href="#submit">我要投稿</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="搜条目、艺人、事件…" aria-label="搜索内容">
+        <button id="searchBtn" aria-label="搜索">🔍</button>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 移动端导航抽屉 -->
+  <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  <nav class="mobile-nav-panel" id="mobilePanel">
+    <button class="close-btn" id="closeNavBtn" aria-label="关闭菜单">✕</button>
+    <a href="#overview">领域概览</a>
+    <a href="#picks">精选爆料</a>
+    <a href="#updates">实时更新</a>
+    <a href="#categories">分类索引</a>
+    <a href="#deepdive">深度解析</a>
+    <a href="#guide">消费指南</a>
+    <a href="#faq">常见问答</a>
+    <a href="#comments">网友评论</a>
+    <a href="#news">相关资讯</a>
+    <a href="#submit">我要投稿</a>
+  </nav>
+
+  <!-- 主题首屏 -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>每日黑料在线观看</h1>
+        <p class="hero-desc">聚合娱乐圈当日内幕爆料、艺人争议与粉丝讨论。每日更新片场花絮、选秀退赛风波、假唱鉴定实录等一手条目，附带时间线与多信源对照。</p>
+        <div class="hero-actions">
+          <a href="#updates" class="btn-primary">查看今日更新</a>
+          <a href="#picks" class="btn-outline">浏览精选爆料</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg viewBox="0 0 340 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="40" width="300" height="180" rx="20" fill="#fff" opacity="0.7"/>
+          <rect x="40" y="60" width="120" height="14" rx="7" fill="#b83b3b" opacity="0.3"/>
+          <rect x="40" y="84" width="200" height="10" rx="5" fill="#b83b3b" opacity="0.15"/>
+          <rect x="40" y="104" width="260" height="10" rx="5" fill="#b83b3b" opacity="0.15"/>
+          <rect x="40" y="124" width="180" height="10" rx="5" fill="#b83b3b" opacity="0.15"/>
+          <rect x="40" y="150" width="80" height="10" rx="5" fill="#b83b3b" opacity="0.25"/>
+          <circle cx="290" cy="180" r="24" fill="#b83b3b" opacity="0.9"/>
+          <path d="M284 180l4 4 8-9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M60 200 Q120 170 180 200 T300 195" stroke="#b83b3b" stroke-width="2" opacity="0.3" fill="none"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主内容区：三栏门户 -->
+  <div class="main-wrapper">
+    <!-- 左侧频道索引 -->
+    <aside class="channel-sidebar">
+      <h3>频道索引</h3>
+      <ul>
+        <li><a href="#overview" class="active">领域概览</a></li>
+        <li><a href="#picks">精选爆料</a></li>
+        <li><a href="#updates">实时更新</a></li>
+        <li><a href="#categories">分类索引</a></li>
+        <li><a href="#deepdive">深度解析</a></li>
+        <li><a href="#guide">消费指南</a></li>
+        <li><a href="#faq">常见问答</a></li>
+        <li><a href="#comments">网友评论</a></li>
+        <li><a href="#news">相关资讯</a></li>
+        <li><a href="#submit">我要投稿</a></li>
+        <li><a href="#related">相关推荐</a></li>
+        <li><a href="#rank">热门榜单</a></li>
+      </ul>
+    </aside>
+
+    <!-- 中间主内容 -->
+    <main class="content-main">
+
+      <!-- 1. 主题领域概览 -->
+      <section class="section-block" id="overview">
+        <h2 class="section-title">内娱爆料领域概览</h2>
+        <div class="overview-text">
+          <p>娱乐圈爆料涵盖的范围比多数人想的要宽。片场纪律问题、选秀合约纠纷、音乐节演出质量、艺人社交媒体小号、经纪公司资源分配——每个方向都有固定的信息源和传播路径。近一个月内，被讨论最多的是三类：选秀节目《星动2026》的退赛风波、某音乐节假唱鉴定音频的二次传播、以及横店剧组流出的现场视频。</p>
+          <p>这些条目的共同特征是：原始素材往往由现场工作人员或站姐在<strong>小红书、微博和抖音</strong>首发，随后被搬运至豆瓣小组和微信群进行二次解读。信息在传播过程中会出现明显的层级分化——原始视频、营销号剪辑版、文字转述版、以及粉丝澄清版，四者内容常有出入。2026年11月6日流传的“假唱鉴定音频”就是一个典型：原始音频时长4分12秒，经过三次转码后高频部分被削掉，导致部分听众误判。</p>
+          <p>另一个值得注意的方向是<strong>合约类爆料</strong>。10月下旬以来，至少有三个选秀艺人的解约纠纷被曝光，涉及违约金金额从80万到300万不等。这类信息的核实难度最高，因为合同细节通常只有当事人和法务知晓，外部信源多为“接近XX的人士”。</p>
+        </div>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section class="section-block" id="picks">
+        <h2 class="section-title">本周精选爆料条目</h2>
+        <p class="section-subtitle">基于站内热度与信源完整度筛选，更新于2026-11-08</p>
+        <div class="card-grid">
+          <div class="content-card">
+            <img src="https://picsum.photos/seed/blackliao_p1/400/300" alt="横店剧组片场视频截图" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">片场直击</span>
+              <div class="card-title">某古装剧组场务与群演冲突完整视频</div>
+              <div class="card-desc">11月6日横店《凤隐长安》剧组流出三段现场视频，显示场务因群演手机拍摄问题发生推搡。原始视频总长2分47秒，已有剧组工作人员私信确认“确有摩擦，已内部处理”。</div>
+              <div class="card-tags"><span>横店</span><span>凤隐长安</span><span>现场视频</span></div>
+              <div class="card-meta"><span>🔥 3.2万热度</span><span>11-06</span></div>
+            </div>
+          </div>
+          <div class="content-card">
+            <img src="https://picsum.photos/seed/blackliao_p2/400/300" alt="选秀节目星动2026舞台照" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">选秀风波</span>
+              <div class="card-title">《星动2026》选手王若熙退赛声明前后时间线</div>
+              <div class="card-desc">10月30日王若熙发博称“因身体原因退出”，但粉丝发现其11月1日仍在舞蹈室练舞。经纪公司“星耀文化”11月2日补充声明称“合约协商中”，与退赛说法存在矛盾。</div>
+              <div class="card-tags"><span>星动2026</span><span>退赛</span><span>星耀文化</span></div>
+              <div class="card-meta"><span>🔥 2.8万热度</span><span>11-02</span></div>
+            </div>
+          </div>
+          <div class="content-card">
+            <img src="https://picsum.photos/seed/blackliao_p3/400/300" alt="音乐节现场观众拍摄画面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">假唱争议</span>
+              <div class="card-title">太湖湾音乐节“假唱鉴定”音频频谱分析</div>
+              <div class="card-desc">11月5日B站UP主“音频老张”发布频谱对比视频，指出某乐队主唱在《夜航》副歌段存在0.3秒的波形断层。视频播放量47万，评论区出现“垫音”与“设备问题”两种解读。</div>
+              <div class="card-tags"><span>太湖湾</span><span>假唱</span><span>频谱分析</span></div>
+              <div class="card-meta"><span>🔥 2.5万热度</span><span>11-05</span></div>
+            </div>
+          </div>
+          <div class="content-card">
+            <img src="https://picsum.photos/seed/blackliao_p4/400/300" alt="艺人社交媒体小号截图" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">小号曝光</span>
+              <div class="card-title">林澈疑似小号“凌晨三点的猫”发帖记录整理</div>
+              <div class="card-desc">豆瓣用户10月28日发现疑似林澈小号，发帖时间集中在凌晨2-4点，内容涉及剧组盒饭吐槽和歌词草稿。比对手机型号和发帖IP归属地后，可信度评估为“中等偏上”。</div>
+              <div class="card-tags"><span>林澈</span><span>小号</span><span>豆瓣</span></div>
+              <div class="card-meta"><span>🔥 1.9万热度</span><span>10-28</span></div>
+            </div>
+          </div>
+          <div class="content-card">
+            <img src="https://picsum.photos/seed/blackliao_p5/400/300" alt="经纪公司大楼外观" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">合约纠纷</span>
+              <div class="card-title">练习生陈屿解约违约金从300万降至80万谈判记录</div>
+              <div class="card-desc">11月3日知情人士向“娱理”透露，陈屿与原公司“启航娱乐”的解约拉锯已进入第三轮，违约金从最初300万降到80万，附加条件是三年内不得签约竞品公司。</div>
+              <div class="card-tags"><span>陈屿</span><span>启航娱乐</span><span>解约</span></div>
+              <div class="card-meta"><span>🔥 1.6万热度</span><span>11-03</span></div>
+            </div>
+          </div>
+          <div class="content-card">
+            <img src="https://picsum.photos/seed/blackliao_p6/400/300" alt="粉丝应援现场花篮照片" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">粉丝生态</span>
+              <div class="card-title">赵露思后援会管理层改组事件中的应援款去向</div>
+              <div class="card-desc">10月25日后援会宣布改组，前会长“露露平安”被质疑挪用2025年生日应援款约12万元。新管理层公布的账目截图显示余额3.4万元，差额部分尚未说明。</div>
+              <div class="card-tags"><span>赵露思</span><span>后援会</span><span>应援款</span></div>
+              <div class="card-meta"><span>🔥 1.4万热度</span><span>10-25</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 -->
+      <section class="section-block" id="updates">
+        <h2 class="section-title">今日实时更新</h2>
+        <p class="section-subtitle">2026-11-08 滚动记录</p>
+        <ul class="update-list">
+          <li><span class="update-time">14:32</span><span class="update-name">《凤隐长安》剧组</span><span class="update-summary">再流出第二段现场视频，角度不同，显示冲突前双方有言语争执</span></li>
+          <li><span class="update-time">13:15</span><span class="update-name">王若熙</span><span class="update-summary">微博上线但未发新内容，粉丝群管理员称“等官方通知”</span></li>
+          <li><span class="update-time">11:48</span><span class="update-name">音频老张</span><span class="update-summary">发布补充视频，用未转码原始音频重新分析，结论改为“垫音可能性大”</span></li>
+          <li><span class="update-time">10:20</span><span class="update-name">启航娱乐</span><span class="update-summary">官微发布声明，称“与陈屿的合约纠纷已进入友好协商阶段”</span></li>
+          <li><span class="update-time">09:05</span><span class="update-name">林澈工作室</span><span class="update-summary">否认小号传闻，称“已委托律师取证”，未点名具体账号</span></li>
+          <li><span class="update-time">08:30</span><span class="update-name">赵露思后援会</span><span class="update-summary">公布第三方审计时间表，预计11月15日前出报告</span></li>
+          <li><span class="update-time">07:50</span><span class="update-name">太湖湾音乐节</span><span class="update-summary">主办方客服回应“演出设备当天有雨，不排除技术原因”</span></li>
+        </ul>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section class="section-block" id="categories">
+        <h2 class="section-title">爆料分类索引</h2>
+        <p class="section-subtitle">按事件类型快速定位</p>
+        <div class="category-grid">
+          <div class="category-item"><span class="cat-icon">🎬</span>片场直击</div>
+          <div class="category-item"><span class="cat-icon">🎤</span>选秀风波</div>
+          <div class="category-item"><span class="cat-icon">🎵</span>假唱争议</div>
+          <div class="category-item"><span class="cat-icon">📱</span>小号曝光</div>
+          <div class="category-item"><span class="cat-icon">📄</span>合约纠纷</div>
+          <div class="category-item"><span class="cat-icon">💔</span>粉丝生态</div>
+          <div class="category-item"><span class="cat-icon">📸</span>私生跟拍</div>
+          <div class="category-item"><span class="cat-icon">💬</span>回应声明</div>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析正文 -->
+      <section class="section-block" id="deepdive">
+        <h2 class="section-title">爆料可信度分层：从原始素材到二次转述</h2>
+        <div class="deep-dive">
+          <p>判断一条娱乐圈爆料值不值得跟进，最直接的办法是看它处在信息链的第几层。同一事件在不同层级的面貌差异极大，把转述当原始素材用，是误判的主要来源。</p>
+
+          <h3>第一层：原始拍摄素材</h3>
+          <p>现场视频、音频、聊天截图、合同照片。这一层的特征是带有可验证的设备痕迹——视频有拍摄时间戳和地理位置，截图有原始对话框的边角像素。11月6日《凤隐长安》剧组流出的三段视频中，第一段右下角可见“2026-11-06 09:41”的时间水印，与场务推搡发生的通告单时间吻合。第二段没有时间水印，但视频开头有人喊“第三场准备”，对应剧组当天拍摄计划中的第三场。这类细节是区分原始素材与后期剪辑的关键。</p>
+
+          <h3>第二层：加工解读版</h3>
+          <p>营销号搬运时加上的字幕、箭头标注、慢放处理。这一层最容易产生事实偏移。以“假唱鉴定”为例，B站UP主“音频老张”的第一版视频将0.3秒的波形断层标记为“假唱实锤”，但11月8日他发布的补充视频承认第一版使用了转码三次的音频文件，高频部分被削掉后波形本身就会断裂。原始音频重新分析后，结论改为“垫音可能性大”。同一段素材，两次解读，中间隔了三天和一个转码环节。</p>
+
+          <h3>第三层：文字转述与匿名信源</h3>
+          <p>“接近XX的人士透露”“据剧组工作人员称”。这类表述的核实成本最高。以陈屿解约案为例，11月3日“娱理”的报道中，违约金从300万降到80万这一数字有两个独立信源交叉印证：一位是陈屿的前经纪人，一位是启航娱乐的法务外包人员。但“三年内不得签约竞品公司”的附加条件只有一个信源，且该信源此前曾提供过不准确的信息。在站内条目中，这一附加条件被单独标注为“单信源，待核实”。</p>
+
+          <div class="highlight-box">
+            <strong>可核对的结构：</strong>判断一条爆料的可信度，按以下清单逐项打勾——①原始素材是否有时间/地点水印？②转述者是否公开了信息获取渠道？③关键数字是否有两个以上独立信源？④当事方是否已回应？⑤同一事件的不同版本之间，核心事实是否一致？五项中满足三项以上，才进入“可跟进”区间。
+          </div>
+
+          <h3>当事方回应的四种类型</h3>
+          <p>回应本身也是信息。第一种是直接否认并附证据（如林澈工作室的律师函），这类回应如果只发函不立案，可信度打折扣。第二种是承认部分事实但改变定性（如启航娱乐“友好协商”的措辞，承认有纠纷但否认“拉锯”）。第三种是拖延（如赵露思后援会承诺审计但未给具体日期），拖延本身暗示账目存在问题。第四种是不回应，不回应不直接等于默认，但会延长信息真空期，给二次转述留下空间。</p>
+        </div>
+      </section>
+
+      <!-- 6. 体验指南 / 消费路径 -->
+      <section class="section-block" id="guide">
+        <h2 class="section-title">爆料内容的消费顺序与判断路径</h2>
+        <div class="guide-steps">
+          <div class="guide-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>先看带原始素材的条目</h4>
+              <p>优先打开附有现场视频、原始截图或完整录音的条目。没有原始素材的条目先放一边，等第二信源出现再回头看。原始素材不一定真实，但至少给了你自行判断的锚点。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>对比同一事件的不同版本</h4>
+              <p>《凤隐长安》剧组事件目前有三个版本：第一段视频显示场务先动手，第二段视频显示群演先推搡，群演群组内流传的聊天记录则称“场务骂人在先”。三个版本的核心事实（发生了肢体冲突）一致，但因果链各说各话。关注一致的部分，对不一致的部分保留判断。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>看当事方回应的时间差</h4>
+              <p>回应快不代表可信，但回应慢通常意味着内部在协调口径。林澈工作室在小号曝光后48小时内回应，启航娱乐在解约报道后5天回应，太湖湾音乐节主办方至今未发正式声明。时间差本身是一条信息。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>类似条目横向比较</h4>
+              <p>同样是粉丝后援会财务问题，2025年“周也后援会账目风波”的处理方式是公布银行流水，而赵露思后援会目前只承诺审计未公开流水。把同类事件的处理方式拉平比较，能看出哪些是行业通病，哪些是个案。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section class="section-block" id="faq">
+        <h2 class="section-title">常见问题</h2>
+        <div class="faq-list">
+          <details>
+            <summary>《星动2026》王若熙退赛到底是不是身体原因？</summary>
+            <div class="faq-answer">目前公开的时间线显示矛盾点集中在11月1日：退赛声明10月30日发出，但王若熙11月1日仍出现在舞蹈室监控画面中。经纪公司“星耀文化”11月2日的补充声明改口为“合约协商中”，没有正面解释练舞画面。粉丝整理的时间线指出，退赛声明发出前三天，王若熙曾点赞一条抱怨“镜头分配不公”的微博后取消。身体原因的说法目前只有经纪公司单方声明，没有医院或第三方证明。</div>
+          </details>
+          <details>
+            <summary>太湖湾音乐节假唱争议里，频谱图能作为证据吗？</summary>
+            <div class="faq-answer">频谱图可以显示波形特征，但受音频转码影响极大。11月5日流传的鉴定视频使用的是转码三次的音频文件，高频部分已经被压缩削掉，波形断层在这种情况下是转码的正常副作用。11月8日补充视频改用原始录音后，断层消失，改为“垫音”特征。频谱分析在专业音频鉴定中需要同时满足原始文件、无损格式、完整上下文三个条件，缺一项都不能单独作为假唱定论。</div>
+          </details>
+          <details>
+            <summary>陈屿和启航娱乐的解约违约金到底是多少？</summary>
+            <div class="faq-answer">11月3日报道中提到的数字是从300万降到80万，这一数字有两个独立信源交叉印证。但“三年竞业限制”的附加条件只有一个信源，该信源此前提供过不准确信息。启航娱乐11月8日的声明仅称“友好协商”，没有公布具体金额。解约协议通常包含保密条款，最终数字可能永远不会公开，80万目前是“可信度中等”的转述数字，不是已确认事实。</div>
+          </details>
+          <details>
+            <summary>林澈小号“凌晨三点的猫”可信吗？</summary>
+            <div class="faq-answer">目前可核对的信息有三项：发帖时间集中在凌晨2-4点，与林澈公开行程中的休息时间部分吻合；发帖手机型号与林澈此前在机场被拍到的备用机一致；发帖IP归属地显示为横店，林澈10月下旬确实在横店拍戏。不支持的三项是：小号从未发布过任何正脸照片；措辞习惯与林澈公开采访存在差异；工作室已发律师函否认。综合判断为“中等偏上，未到确认级别”。</div>
+          </details>
+          <details>
+            <summary>后援会应援款去向问题，粉丝能查到账目吗？</summary>
+            <div class="faq-answer">赵露思后援会10月25日改组后，新管理层公布了余额截图（3.4万元）和部分支出明细，但2025年生日应援的主要支出项没有对应发票或转账记录。新管理层11月8日承诺引入第三方审计，预计11月15日前出报告。在同类案例中，2025年周也后援会账目风波最终通过公布完整银行流水解决，而多数后援会没有对公账户，应援款通过个人账户流转，这是账目难以追溯的结构性原因。</div>
+          </details>
+          <details>
+            <summary>片场冲突视频里的剧组会被处罚吗？</summary>
+            <div class="faq-answer">横店影视城管理方对剧组现场纠纷的常规处理是约谈制片人并要求内部整改，公开处罚案例极少。2024年曾有剧组因场务打人被横店管理方通报，但处理结果是“暂停拍摄许可三天”，没有罚款。本次《凤隐长安》剧组工作人员已确认“内部处理”，管理方尚未公开发声。行业惯例是事件热度下降后不了了之，除非有伤情鉴定或警方介入。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section class="section-block" id="comments">
+        <h2 class="section-title">网友怎么说</h2>
+        <div class="comment-list">
+          <div class="comment-item">
+            <div class="comment-avatar">吃瓜</div>
+            <div class="comment-body">
+              <div class="comment-header"><span class="comment-nickname">瓜田里的猹</span><span class="comment-time">11-08 14:50</span></div>
+              <div class="comment-text">凤隐长安那个第二段视频角度明显是群演那边拍的，推搡前确实有骂声，但听不清骂的什么。等一个完整版。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">音</div>
+            <div class="comment-body">
+              <div class="comment-header"><span class="comment-nickname">音频老张的观众</span><span class="comment-time">11-08 13:22</span></div>
+              <div class="comment-text">第一天说实锤假唱，第三天改口垫音，这波操作下来以后他的鉴定视频都得打个问号了。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">路</div>
+            <div class="comment-body">
+              <div class="comment-header"><span class="comment-nickname">路过打酱油的</span><span class="comment-time">11-08 12:05</span></div>
+              <div class="comment-text">王若熙练舞那个监控画面我看了，时间是11月1日下午，退赛声明都发两天了还在练，这身体原因说不过去。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">前</div>
+            <div class="comment-body">
+              <div class="comment-header"><span class="comment-nickname">前秀粉不追了</span><span class="comment-time">11-08 11:30</span></div>
+              <div class="comment-text">星耀文化那声明写得跟没写一样，“合约协商中”五个字解释不了一百个问题。选秀合约坑太多，小孩签的时候根本看不懂。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">财</div>
+            <div class="comment-body">
+              <div class="comment-header"><span class="comment-nickname">财务小透明</span><span class="comment-time">11-08 10:18</span></div>
+              <div class="comment-text">后援会账目这事，审计报告出来之前谁都不好说。但只公布余额不公布流水，这个操作本身就有问题。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">横</div>
+            <div class="comment-body">
+              <div class="comment-header"><span class="comment-nickname">横店老群演</span><span class="comment-time">11-08 09:44</span></div>
+              <div class="comment-text">剧组场务和群演起冲突太常见了，通告赶得紧的时候两边火气都大。不过动手就是另一回事了。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">林</div>
+            <div class="comment-body">
+              <div class="comment-header"><span class="comment-nickname">林澈的墙头草</span><span class="comment-time">11-08 09:02</span></div>
+              <div class="comment-text">小号那个发帖时间跟行程对得上，但内容感觉不太像他，他采访里从来不那么说话。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">陈</div>
+            <div class="comment-body">
+              <div class="comment-header"><span class="comment-nickname">陈屿加油</span><span class="comment-time">11-07 22:15</span></div>
+              <div class="comment-text">80万违约金对他来说也是天文数字啊，练习生时期一个月就几千块生活费。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">看</div>
+            <div class="comment-body">
+              <div class="comment-header"><span class="comment-nickname">看热闹不嫌事大</span><span class="comment-time">11-07 20:40</span></div>
+              <div class="comment-text">今天更新里启航娱乐的声明来得挺快，5天就回应了，比有些公司装死一个月强。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">太</div>
+            <div class="comment-body">
+              <div class="comment-header"><span class="comment-nickname">太湖湾下雨天</span><span class="comment-time">11-07 18:12</span></div>
+              <div class="comment-text">那天现场确实下雨了，设备出问题也不是没可能。不过主办方到现在没正式说法，有点说不过去。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">审</div>
+            <div class="comment-body">
+              <div class="comment-header"><span class="comment-nickname">审计狗一枚</span><span class="comment-time">11-07 16:55</span></div>
+              <div class="comment-text">后援会这种账目审计，如果没有银行流水，第三方也审不出什么。关键看新管理层愿不愿意公开个人账户的转账记录。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">今</div>
+            <div class="comment-body">
+              <div class="comment-header"><span class="comment-nickname">今天吃什么好</span><span class="comment-time">11-07 15:20</span></div>
+              <div class="comment-text">蹲一个凤隐长安剧组的正式回应，现在只有工作人员私信，不算数。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">老</div>
+            <div class="comment-body">
+              <div class="comment-header"><span class="comment-nickname">老选秀观众</span><span class="comment-time">11-07 12:08</span></div>
+              <div class="comment-text">星动2026这一季退赛的第三个了吧，前面两个也是合约问题。节目组选人的时候不做背调的吗。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section class="section-block" id="news">
+        <h2 class="section-title">相关资讯</h2>
+        <div class="news-list">
+          <div class="news-item">
+            <img src="https://picsum.photos/seed/blackliao_n1/600/400" alt="星动2026节目组声明截图" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <div class="news-title">《星动2026》节目组调整第三轮公演规则，取消观众投票复活环节</div>
+              <div class="news-date">2026-11-07</div>
+              <div class="news-summary">节目组11月7日通过官微发布规则调整说明，第三轮公演将取消“观众复活投票”，改为导师团合议制。调整通知发布于王若熙退赛事件一周后，未提及退赛关联性。</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <img src="https://picsum.photos/seed/blackliao_n2/600/400" alt="横店影视城管理方通告文件" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <div class="news-title">横店影视城管理方11月8日约谈《凤隐长安》制片人，要求提交现场管理整改方案</div>
+              <div class="news-date">2026-11-08</div>
+              <div class="news-summary">管理方工作人员向“横店发布”确认约谈属实，整改方案需在11月12日前提交。剧组原定11月9日的媒体探班活动已取消，制片人未接听电话。</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <img src="https://picsum.photos/seed/blackliao_n3/600/400" alt="启航娱乐公司前台照片" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <div class="news-title">启航娱乐法务负责人离职，曾负责陈屿合约事务</div>
+              <div class="news-date">2026-11-06</div>
+              <div class="news-summary">启航娱乐11月6日内部邮件确认法务负责人张某某已于10月31日离职，其负责的练习生合约事务移交至外部律所。陈屿解约谈判的后续对接人尚未公布。</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <img src="https://picsum.photos/seed/blackliao_n4/600/400" alt="音乐节设备检查现场照片" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <div class="news-title">太湖湾音乐节主办方公布设备检测报告，称雨天导致返送音箱短路</div>
+              <div class="news-date">2026-11-05</div>
+              <div class="news-summary">检测报告由第三方机构“声工场”出具，显示11月1日演出当天有3台返送音箱因进水短路。报告未涉及主唱耳返信号问题，也未回应垫音争议。</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <img src="https://picsum.photos/seed/blackliao_n5/600/400" alt="后援会账目公示截图" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <div class="news-title">赵露思后援会新管理层公布2025年应援支出汇总表，差额11.6万元待说明</div>
+              <div class="news-date">2026-11-04</div>
+              <div class="news-summary">汇总表显示2025年生日应援总收入26.8万元，已核支出15.2万元，差额11.6万元标注为“待补充凭证”。新管理层称凭证找回期限为11月15日。</div>
+            </div>
+          </div>
+          <div class="news-item">
+            <img src="https://picsum.photos/seed/blackliao_n6/600/400" alt="林澈工作室声明文件" width="600" height="400" loading="lazy">
+            <div class="news-body">
+              <div class="news-title">林澈工作室就小号传闻发律师函，豆瓣原帖已被删除</div>
+              <div class="news-date">2026-11-03</div>
+              <div class="news-summary">律师函由“星权律师事务所”出具，要求豆瓣平台提供发帖用户注册信息。11月8日查询发现，原爆料帖已被删除，发帖账号显示“已注销”。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section class="section-block" id="related">
+        <h2 class="section-title">相关内容方向</h2>
+        <div class="related-tags">
+          <a href="#picks">横店剧组现场管理</a>
+          <a href="#picks">选秀合约违约金案例</a>
+          <a href="#picks">音乐节垫音鉴定方法</a>
+          <a href="#picks">艺人小号辨认技巧</a>
+          <a href="#picks">后援会账目公开惯例</a>
+          <a href="#picks">经纪公司声明措辞分析</a>
+          <a href="#picks">私生跟拍与片场冲突</a>
+        </div>
+      </section>
+
+      <!-- 11. 热门榜单 -->
+      <section class="section-block" id="rank">
+        <h2 class="section-title">本周黑料热度榜</h2>
+        <p class="section-subtitle">按站内阅读与讨论量统计，截至2026-11-08 15:00</p>
+        <ol class="rank-list">
+          <li><span class="rank-name">《凤隐长安》剧组冲突完整视频</span><span class="rank-heat">3.2万</span></li>
+          <li><span class="rank-name">王若熙退赛声明时间线矛盾</span><span class="rank-heat">2.8万</span></li>
+          <li><span class="rank-name">太湖湾音乐节假唱频谱分析</span><span class="rank-heat">2.5万</span></li>
+          <li><span class="rank-name">林澈疑似小号“凌晨三点的猫”</span><span class="rank-heat">1.9万</span></li>
+          <li><span class="rank-name">陈屿解约违约金谈判记录</span><span class="rank-heat">1.6万</span></li>
+          <li><span class="rank-name">赵露思后援会应援款差额</span><span class="rank-heat">1.4万</span></li>
+        </ol>
+      </section>
+
+      <!-- 12. 投稿互动区 -->
+      <section class="section-block" id="submit">
+        <h2 class="section-title">参与爆料与讨论</h2>
+        <p class="section-subtitle">有现场素材或内部信源？欢迎提交</p>
+        <div class="submit-grid">
+          <div class="submit-card">
+            <span class="submit-icon">📤</span>
+            <h4>上传现场素材</h4>
+            <p>视频、音频、截图均可。请尽量保留原始文件和拍摄时间信息，便于交叉核实。</p>
+          </div>
+          <div class="submit-card">
+            <span class="submit-icon">✍️</span>
+            <h4>撰写事件复盘</h4>
+            <p>对某个条目有完整时间线或信源比对分析，可以投稿深度复盘，编辑会跟进核实。</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右侧辅助栏 -->
+    <aside class="aux-sidebar">
+      <div class="aux-card">
+        <h3>今日更新速览</h3>
+        <ul class="aux-list">
+          <li><a href="#updates">14:32 凤隐长安第二段视频</a></li>
+          <li><a href="#updates">13:15 王若熙微博上线</a></li>
+          <li><a href="#updates">11:48 音频老张补充视频</a></li>
+          <li><a href="#updates">10:20 启航娱乐声明</a></li>
+          <li><a href="#updates">09:05 林澈工作室否认</a></li>
+          <li><a href="#updates">08:30 后援会审计时间表</a></li>
+        </ul>
+      </div>
+      <div class="aux-card">
+        <h3>热门标签</h3>
+        <div class="related-tags" style="gap:8px;">
+          <a href="#picks" style="font-size:12px;padding:6px 12px;">凤隐长安</a>
+          <a href="#picks" style="font-size:12px;padding:6px 12px;">星动2026</a>
+          <a href="#picks" style="font-size:12px;padding:6px 12px;">假唱鉴定</a>
+          <a href="#picks" style="font-size:12px;padding:6px 12px;">陈屿解约</a>
+          <a href="#picks" style="font-size:12px;padding:6px 12px;">林澈小号</a>
+          <a href="#picks" style="font-size:12px;padding:6px 12px;">后援会账目</a>
+          <a href="#picks" style="font-size:12px;padding:6px 12px;">横店片场</a>
+        </div>
+      </div>
+      <div class="aux-card">
+        <h3>信源可信度提示</h3>
+        <ul class="aux-list">
+          <li>原始视频/音频：可跟进</li>
+          <li>双信源文字报道：中等可信</li>
+          <li>单匿名信源：待核实</li>
+          <li>营销号剪辑版：谨慎参考</li>
+          <li>粉丝澄清文：需对照原始素材</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>每日黑料在线观看</h3>
+        <p>覆盖内娱片场、选秀、音乐节等现场爆料，条目含原始素材时间线和多信源对照。每个工作日更新，周末汇总本周未跟进条目。</p>
+      </div>
+      <div class="footer-col">
+        <h4>内容分类</h4>
+        <ul>
+          <li><a href="#categories">片场直击</a></li>
+          <li><a href="#categories">选秀风波</a></li>
+          <li><a href="#categories">假唱争议</a></li>
+          <li><a href="#categories">合约纠纷</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>参与</h4>
+        <ul>
+          <li><a href="#submit">投稿爆料</a></li>
+          <li><a href="#submit">上传素材</a></li>
+          <li><a href="#comments">网友评论</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#deepdive">可信度分层</a></li>
+          <li><a href="#guide">消费指南</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 每日黑料在线观看 · 内容为示例条目，不构成事实认定</span>
+      <span>更新于 2026-11-08 15:00</span>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+  <script>
+    (function() {
+      // 移动端导航
+      var hamburger = document.getElementById('hamburgerBtn');
+      var overlay = document.getElementById('mobileOverlay');
+      var panel = document.getElementById('mobilePanel');
+      var closeBtn = document.getElementById('closeNavBtn');
+
+      function openNav() {
+        overlay.classList.add('active');
+        panel.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeNav() {
+        overlay.classList.remove('active');
+        panel.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', openNav);
+      closeBtn.addEventListener('click', closeNav);
+      overlay.addEventListener('click', closeNav);
+
+      panel.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', closeNav);
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeNav();
+        }
+      });
+
+      // 回到顶部
+      var backBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          backBtn.classList.add('visible');
+        } else {
+          backBtn.classList.remove('visible');
+        }
+      });
+      backBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 搜索功能（本地筛选）
+      var searchInput = document.getElementById('searchInput');
+      var searchBtn = document.getElementById('searchBtn');
+
+      function doSearch() {
+        var q = searchInput.value.trim().toLowerCase();
+        if (!q) {
+          // 清除高亮
+          document.querySelectorAll('.search-highlight').forEach(function(el) {
+            el.outerHTML = el.innerHTML;
+          });
+          return;
+        }
+        // 简单在卡片标题和更新列表中查找，给出反馈
+        var cards = document.querySelectorAll('.content-card');
+        var found = 0;
+        cards.forEach(function(card) {
+          var text = card.textContent.toLowerCase();
+          if (text.indexOf(q) > -1) {
+            card.style.outline = '2px solid #b83b3b';
+            found++;
+          } else {
+            card.style.outline = 'none';
+          }
+        });
+        if (found === 0) {
+          // 在页面上显示无结果提示（简单alert，避免复杂DOM操作）
+          alert('未找到与“' + searchInput.value + '”相关的内容，请尝试其他关键词。');
+        }
+      }
+
+      searchBtn.addEventListener('click', doSearch);
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          doSearch();
+        }
+      });
+
+      // 侧栏导航高亮
+      var sections = document.querySelectorAll('.section-block');
+      var sidebarLinks = document.querySelectorAll('.channel-sidebar ul li a');
+      if (sections.length && sidebarLinks.length) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var id = entry.target.id;
+              sidebarLinks.forEach(function(link) {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + id) {
+                  link.classList.add('active');
+                }
+              });
+            }
+          });
+        }, { rootMargin: '-20% 0px -60% 0px' });
+        sections.forEach(function(section) {
+          if (section.id) observer.observe(section);
+        });
+      }
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "每日黑料在线观看",
+    "description": "聚合内娱爆料、艺人争议与粉丝讨论的资讯页面",
+    "keywords": "每日黑料在线观看"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "《星动2026》王若熙退赛到底是不是身体原因？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "目前公开的时间线显示矛盾点集中在11月1日：退赛声明10月30日发出，但王若熙11月1日仍出现在舞蹈室监控画面中。经纪公司“星耀文化”11月2日的补充声明改口为“合约协商中”，没有正面解释练舞画面。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "太湖湾音乐节假唱争议里，频谱图能作为证据吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "频谱图可以显示波形特征，但受音频转码影响极大。11月5日流传的鉴定视频使用的是转码三次的音频文件，高频部分已经被压缩削掉，波形断层在这种情况下是转码的正常副作用。11月8日补充视频改用原始录音后，断层消失。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "陈屿和启航娱乐的解约违约金到底是多少？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "11月3日报道中提到的数字是从300万降到80万，这一数字有两个独立信源交叉印证。但“三年竞业限制”的附加条件只有一个信源。启航娱乐11月8日的声明仅称“友好协商”，没有公布具体金额。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "林澈小号“凌晨三点的猫”可信吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "目前可核对的信息有三项：发帖时间集中在凌晨2-4点，与林澈公开行程中的休息时间部分吻合；发帖手机型号与林澈此前在机场被拍到的备用机一致；发帖IP归属地显示为横店。工作室已发律师函否认，综合判断为“中等偏上，未到确认级别”。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "后援会应援款去向问题，粉丝能查到账目吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "赵露思后援会10月25日改组后，新管理层公布了余额截图和部分支出明细，但2025年生日应援的主要支出项没有对应发票或转账记录。新管理层11月8日承诺引入第三方审计，预计11月15日前出报告。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "片场冲突视频里的剧组会被处罚吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "横店影视城管理方对剧组现场纠纷的常规处理是约谈制片人并要求内部整改，公开处罚案例极少。本次《凤隐长安》剧组工作人员已确认“内部处理”，管理方尚未公开发声。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+      </html>
