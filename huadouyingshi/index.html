@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>花都影视hdys电脑观看 - 影视资源与电脑播放指南</title>
+<meta name="description" content="花都影视hdys电脑观看指南，汇总电脑端播放器选择、1080P与4K片源对比、字幕格式兼容、常见卡顿排查和影视条目推荐，适合用电脑追剧和看片的人参考。">
+<meta name="keywords" content="花都影视hdys电脑观看">
+<style>
+:root{
+  --brand:#1f6feb;
+  --brand-light:#e8f1ff;
+  --brand-mid:#4a8bf0;
+  --brand-dark:#0f4c9e;
+  --bg:#f5f7fa;
+  --panel:#ffffff;
+  --ink:#1a2230;
+  --ink-2:#4a5568;
+  --ink-3:#8892a4;
+  --line:#e2e7ef;
+  --radius-card:14px;
+  --radius-btn:8px;
+  --radius-tag:999px;
+  --radius-banner:16px;
+  --shadow:0 1px 3px rgba(20,40,80,.06),0 4px 14px rgba(20,40,80,.05);
+  --shadow-hover:0 4px 10px rgba(20,40,80,.10),0 10px 26px rgba(20,40,80,.09);
+  --sticky-h:106px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-h);}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+ul,ol{list-style:none;}
+img{display:block;max-width:100%;}
+button{font-family:inherit;cursor:pointer;}
+.wrap{max-width:1320px;margin:0 auto;padding:0 20px;}
+
+/* ---------- 吸顶公告条 ---------- */
+.notice-bar{
+  position:sticky;top:0;z-index:60;
+  background:linear-gradient(90deg,#0f4c9e,#1f6feb 55%,#2f7ff0);
+  color:#eaf2ff;font-size:13px;
+}
+.notice-inner{
+  max-width:1320px;margin:0 auto;padding:8px 20px;
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+}
+.notice-brand{
+  font-weight:700;letter-spacing:.5px;color:#fff;
+  background:rgba(255,255,255,.16);padding:2px 10px;border-radius:6px;white-space:nowrap;
+}
+.notice-item{display:flex;align-items:center;gap:6px;white-space:nowrap;}
+.notice-date{color:#9fc4ff;font-variant-numeric:tabular-nums;}
+.notice-sep{opacity:.4;}
+.notice-more{margin-left:auto;color:#cfe0ff;white-space:nowrap;}
+
+/* ---------- 页头 ---------- */
+.site-header{
+  position:sticky;top:32px;z-index:55;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:1320px;margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;gap:24px;
+}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.brand-mark{width:38px;height:38px;flex-shrink:0;}
+.brand-text{font-size:19px;font-weight:800;letter-spacing:.3px;color:var(--brand-dark);white-space:nowrap;}
+.main-nav{display:flex;gap:4px;flex-wrap:wrap;flex:1;}
+.main-nav a{
+  padding:6px 12px;border-radius:var(--radius-btn);font-size:14px;color:var(--ink-2);
+  transition:background .15s,color .15s;white-space:nowrap;
+}
+.main-nav a:hover,.main-nav a:focus-visible{background:var(--brand-light);color:var(--brand-dark);}
+.header-search{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.header-search input{
+  width:180px;padding:7px 12px;border:1px solid var(--line);border-radius:var(--radius-btn);
+  font-size:13px;background:#fbfcfe;color:var(--ink);outline:none;
+}
+.header-search input:focus{border-color:var(--brand-mid);box-shadow:0 0 0 3px rgba(31,111,235,.12);}
+.hamburger{
+  display:none;width:40px;height:40px;border:1px solid var(--line);border-radius:var(--radius-btn);
+  background:#fff;align-items:center;justify-content:center;flex-shrink:0;
+}
+.hamburger svg{width:20px;height:20px;}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#0b2a56 0%,#123f7c 45%,#1f6feb 100%);
+  color:#eef4ff;padding:64px 0 72px;
+}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
+.hero h1{font-size:clamp(30px,3.6vw,46px);line-height:1.25;font-weight:800;letter-spacing:.5px;color:#fff;}
+.hero-sub{margin-top:18px;font-size:16px;line-height:1.85;color:#c8dcff;max-width:560px;}
+.hero-tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;}
+.hero-tags span{
+  font-size:13px;padding:5px 13px;border-radius:var(--radius-tag);
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#dce8ff;
+}
+.hero-actions{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:var(--radius-btn);
+  background:#fff;color:var(--brand-dark);font-weight:700;font-size:14px;border:none;
+  transition:transform .15s,box-shadow .15s;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.18);}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:var(--radius-btn);
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.35);color:#eaf2ff;font-size:14px;
+  transition:background .15s;
+}
+.btn-ghost:hover{background:rgba(255,255,255,.18);}
+.hero-visual{position:relative;height:300px;}
+.hero-visual svg{width:100%;height:100%;display:block;}
+.hero-bg-orb{
+  position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;pointer-events:none;
+}
+.orb-1{width:340px;height:340px;background:#3b8bff;top:-120px;right:-60px;}
+.orb-2{width:260px;height:260px;background:#7bb6ff;bottom:-100px;left:20%;opacity:.35;}
+@media (prefers-reduced-motion:no-preference){
+  .hero-visual svg .pulse{animation:pulse 4s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:.55;}50%{opacity:1;}}
+}
+
+/* ---------- 主体布局 ---------- */
+.layout{
+  display:grid;grid-template-columns:200px minmax(0,1fr) 268px;gap:28px;
+  align-items:start;padding:36px 0 56px;
+}
+.channel-col{position:sticky;top:calc(var(--sticky-h) + 16px);}
+.channel-nav{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  box-shadow:var(--shadow);padding:14px 10px;overflow:hidden;
+}
+.channel-title{
+  font-size:12px;font-weight:700;color:var(--ink-3);letter-spacing:1.5px;
+  padding:0 10px 10px;border-bottom:1px solid var(--line);margin-bottom:8px;
+}
+.channel-nav a{
+  display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:var(--radius-btn);
+  font-size:14px;color:var(--ink-2);transition:background .15s,color .15s;
+}
+.channel-nav a:hover,.channel-nav a:focus-visible{background:var(--brand-light);color:var(--brand-dark);}
+.channel-nav a.active{background:var(--brand);color:#fff;font-weight:600;}
+.channel-nav a .dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.55;flex-shrink:0;}
+
+.main-col{min-width:0;}
+.aside-col{position:sticky;top:calc(var(--sticky-h) + 16px);display:flex;flex-direction:column;gap:20px;}
+
+/* ---------- 板块通用 ---------- */
+.section{margin-bottom:44px;}
+.section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap;}
+.section-head h2{font-size:21px;font-weight:800;letter-spacing:.3px;color:var(--ink);}
+.section-head .count{font-size:12px;color:var(--ink-3);font-weight:500;}
+.section-lead{font-size:13.5px;color:var(--ink-3);margin-bottom:18px;}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s;
+}
+.card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px);}
+
+/* ---------- 概览 ---------- */
+.overview{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  box-shadow:var(--shadow);padding:26px 28px;font-size:15px;line-height:1.9;color:var(--ink-2);
+}
+.overview p+p{margin-top:14px;}
+.overview strong{color:var(--brand-dark);font-weight:700;}
+
+/* ---------- 精选卡片 ---------- */
+.pick-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+.pick-card{display:flex;flex-direction:column;overflow:hidden;}
+.pick-card .thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:#dbe4f0;}
+.pick-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s;}
+.pick-card:hover .thumb img{transform:scale(1.04);}
+.pick-card .badge{
+  position:absolute;top:10px;left:10px;font-size:11px;font-weight:700;padding:3px 9px;
+  border-radius:var(--radius-tag);background:rgba(15,76,158,.9);color:#fff;letter-spacing:.5px;
+}
+.pick-card .score{
+  position:absolute;bottom:10px;right:10px;font-size:12px;font-weight:700;padding:3px 9px;
+  border-radius:var(--radius-tag);background:rgba(255,255,255,.92);color:#c47b00;
+}
+.pick-body{padding:14px 15px 16px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.pick-body h3{font-size:15.5px;font-weight:700;line-height:1.45;color:var(--ink);}
+.pick-body p{font-size:13px;line-height:1.7;color:var(--ink-3);flex:1;}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;}
+.tag{
+  font-size:11.5px;padding:2px 9px;border-radius:var(--radius-tag);
+  background:var(--brand-light);color:var(--brand-dark);
+}
+.pick-meta{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3);}
+.pick-meta .heat{color:#d9534f;font-weight:600;}
+
+/* ---------- 最新更新列表 ---------- */
+.update-list{display:flex;flex-direction:column;gap:2px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);box-shadow:var(--shadow);overflow:hidden;}
+.update-item{
+  display:gap;display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:14px;align-items:baseline;
+  padding:13px 18px;border-bottom:1px solid var(--line);transition:background .15s;
+}
+.update-item:last-child{border-bottom:none;}
+.update-item:hover{background:#fafcff;}
+.update-date{font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap;}
+.update-item h3{font-size:14.5px;font-weight:700;display:inline;}
+.update-item .desc{font-size:13px;color:var(--ink-3);display:block;margin-top:2px;}
+.update-tag{font-size:11.5px;color:var(--brand);white-space:nowrap;}
+
+/* ---------- 分类入口 ---------- */
+.cat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}
+.cat-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:16px 16px 14px;box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s,border-color .2s;
+}
+.cat-item:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px);border-color:var(--brand-mid);}
+.cat-item h3{font-size:15px;font-weight:700;margin-bottom:6px;color:var(--brand-dark);}
+.cat-item p{font-size:12.5px;color:var(--ink-3);line-height:1.65;}
+.cat-item .cat-count{display:block;margin-top:8px;font-size:11.5px;color:var(--ink-3);}
+
+/* ---------- 深度解析 ---------- */
+.deep{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  box-shadow:var(--shadow);padding:30px 32px;line-height:1.9;color:var(--ink-2);font-size:15px;
+}
+.deep h3{font-size:17px;font-weight:800;color:var(--ink);margin:26px 0 10px;padding-left:12px;border-left:4px solid var(--brand);}
+.deep h3:first-of-type{margin-top:6px;}
+.deep p+p{margin-top:12px;}
+.deep ul{margin:10px 0 0;padding-left:0;}
+.deep ul li{position:relative;padding-left:18px;margin-bottom:8px;font-size:14px;}
+.deep ul li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:2px;background:var(--brand-mid);}
+.deep .quote-box{
+  margin:16px 0;padding:14px 18px;background:#f4f8ff;border-left:3px solid var(--brand-mid);
+  border-radius:0 var(--radius-btn) var(--radius-btn) 0;font-size:14px;color:var(--ink-2);
+}
+.deep table{width:100%;border-collapse:collapse;margin:14px 0 4px;font-size:13.5px;}
+.deep th,.deep td{border:1px solid var(--line);padding:9px 12px;text-align:left;}
+.deep th{background:#f4f8ff;color:var(--ink);font-weight:700;}
+.deep td{color:var(--ink-2);}
+
+/* ---------- 指南步骤 ---------- */
+.guide-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.step-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  box-shadow:var(--shadow);padding:18px 20px;display:flex;gap:14px;
+}
+.step-num{
+  flex-shrink:0;width:34px;height:34px;border-radius:10px;background:var(--brand);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;
+}
+.step-card h3{font-size:14.5px;font-weight:700;margin-bottom:5px;}
+.step-card p{font-size:13px;color:var(--ink-3);line-height:1.7;}
+
+/* ---------- FAQ ---------- */
+.faq-list{display:flex;flex-direction:column;gap:10px;}
+.faq-list details{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+.faq-list summary{
+  padding:15px 20px;font-size:14.5px;font-weight:700;cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--ink);
+}
+.faq-list summary::-webkit-details-marker{display:none;}
+.faq-list summary::after{content:"+";font-size:20px;color:var(--brand);font-weight:400;line-height:1;transition:transform .2s;flex-shrink:0;}
+.faq-list details[open] summary::after{transform:rotate(45deg);}
+.faq-list details[open] summary{color:var(--brand-dark);}
+.faq-body{padding:0 20px 16px;font-size:13.5px;line-height:1.8;color:var(--ink-2);border-top:1px solid var(--line);padding-top:12px;margin:0 20px 16px;padding-left:0;padding-right:0;}
+
+/* ---------- 评论 ---------- */
+.comment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.comment-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  box-shadow:var(--shadow);padding:14px 16px;
+}
+.comment-head{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.avatar{
+  width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:#fff;
+}
+.comment-name{font-size:13px;font-weight:700;color:var(--ink);}
+.comment-time{font-size:11.5px;color:var(--ink-3);margin-left:auto;}
+.comment-text{font-size:13.5px;line-height:1.75;color:var(--ink-2);}
+
+/* ---------- 资讯 ---------- */
+.news-list{display:flex;flex-direction:column;gap:14px;}
+.news-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  box-shadow:var(--shadow);padding:16px 18px;display:grid;grid-template-columns:112px minmax(0,1fr);gap:16px;
+  transition:box-shadow .2s;
+}
+.news-item:hover{box-shadow:var(--shadow-hover);}
+.news-item img{width:112px;height:84px;object-fit:cover;border-radius:var(--radius-btn);}
+.news-item h3{font-size:15px;font-weight:700;margin-bottom:4px;}
+.news-item .news-date{font-size:12px;color:var(--ink-3);margin-bottom:5px;display:block;}
+.news-item p{font-size:13px;color:var(--ink-3);line-height:1.7;}
+
+/* ---------- 相关推荐标签 ---------- */
+.reco-tags{display:flex;flex-wrap:wrap;gap:10px;}
+.reco-tags a{
+  font-size:13px;padding:7px 16px;border-radius:var(--radius-tag);background:var(--panel);
+  border:1px solid var(--line);color:var(--ink-2);box-shadow:var(--shadow);transition:all .18s;
+}
+.reco-tags a:hover{border-color:var(--brand-mid);color:var(--brand-dark);background:var(--brand-light);transform:translateY(-2px);}
+
+/* ---------- 榜单 / 时间线 ---------- */
+.rank-list{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);box-shadow:var(--shadow);padding:8px 0;}
+.rank-item{display:flex;align-items:center;gap:14px;padding:11px 20px;transition:background .15s;}
+.rank-item:hover{background:#fafcff;}
+.rank-num{width:24px;font-size:15px;font-weight:800;color:var(--ink-3);text-align:center;flex-shrink:0;font-variant-numeric:tabular-nums;}
+.rank-item:nth-child(1) .rank-num{color:#d9534f;}
+.rank-item:nth-child(2) .rank-num{color:#e08b2c;}
+.rank-item:nth-child(3) .rank-num{color:#3f8f4f;}
+.rank-item h3{font-size:14px;font-weight:700;flex:1;}
+.rank-item .rank-type{font-size:11.5px;color:var(--ink-3);white-space:nowrap;}
+.rank-item .rank-heat{font-size:12px;color:#d9534f;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums;}
+
+.timeline{position:relative;padding-left:26px;}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line);}
+.tl-item{position:relative;padding-bottom:18px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-item::before{
+  content:"";position:absolute;left:-24px;top:6px;width:10px;height:10px;border-radius:50%;
+  background:#fff;border:2px solid var(--brand-mid);
+}
+.tl-item .tl-date{font-size:12px;color:var(--brand);font-weight:700;font-variant-numeric:tabular-nums;}
+.tl-item h3{font-size:14px;font-weight:700;margin:2px 0 3px;}
+.tl-item p{font-size:12.5px;color:var(--ink-3);line-height:1.65;}
+
+/* ---------- 侧栏 ---------- */
+.side-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  box-shadow:var(--shadow);padding:18px 18px;
+}
+.side-card h2{font-size:15px;font-weight:800;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line);}
+.side-hot{display:flex;flex-direction:column;gap:11px;}
+.side-hot a{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-2);line-height:1.5;transition:color .15s;}
+.side-hot a:hover{color:var(--brand);}
+.side-hot .n{
+  flex-shrink:0;width:18px;height:18px;border-radius:5px;background:#eef2f9;color:var(--ink-3);
+  font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;
+}
+.side-hot a:nth-child(1) .n{background:#fdecea;color:#d9534f;}
+.side-hot a:nth-child(2) .n{background:#fdf3e3;color:#e08b2c;}
+.side-hot a:nth-child(3) .n{background:#eaf5ec;color:#3f8f4f;}
+.side-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.side-tags a{
+  font-size:12px;padding:4px 11px;border-radius:var(--radius-tag);background:#f2f6fd;
+  color:var(--ink-2);transition:all .15s;
+}
+.side-tags a:hover{background:var(--brand);color:#fff;}
+.side-list{display:flex;flex-direction:column;gap:8px;}
+.side-list a{font-size:13px;color:var(--ink-2);display:flex;justify-content:space-between;gap:8px;transition:color .15s;}
+.side-list a:hover{color:var(--brand);}
+.side-list span{font-size:11.5px;color:var(--ink-3);white-space:nowrap;}
+.side-cta{
+  background:linear-gradient(135deg,#1f6feb,#123f7c);color:#fff;border:none;
+}
+.side-cta h2{color:#fff;border-bottom-color:rgba(255,255,255,.2);}
+.side-cta p{font-size:13px;line-height:1.7;color:#cfe0ff;margin-bottom:14px;}
+.side-cta .btn-primary{width:100%;justify-content:center;}
+
+/* ---------- 投稿互动 ---------- */
+.submit-panel{
+  background:linear-gradient(135deg,#0f4c9e,#1f6feb);border-radius:var(--radius-banner);
+  color:#fff;padding:30px 34px;display:grid;grid-template-columns:1.4fr .6fr;gap:26px;align-items:center;
+}
+.submit-panel h2{font-size:21px;font-weight:800;margin-bottom:10px;}
+.submit-panel p{font-size:14px;line-height:1.8;color:#cfe0ff;}
+.submit-actions{display:flex;flex-direction:column;gap:10px;}
+.submit-actions .btn-primary{justify-content:center;}
+.submit-actions .btn-ghost{justify-content:center;}
+
+/* ---------- 搜索无结果 ---------- */
+.no-result{
+  display:none;padding:22px;text-align:center;background:#fff;border:1px dashed var(--line);
+  border-radius:var(--radius-card);color:var(--ink-3);font-size:14px;
+}
+.no-result.show{display:block;}
+.is-hidden{display:none !important;}
+
+/* ---------- 页尾 ---------- */
+.site-footer{background:#0d1a2e;color:#a8b6cc;padding:44px 0 26px;font-size:13px;}
+.footer-top{display:grid;grid-template-columns:1.3fr 2fr;gap:40px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-brand .brand-text{color:#fff;font-size:18px;margin-bottom:12px;display:block;}
+.footer-brand p{line-height:1.85;color:#8fa1bb;font-size:13px;}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.footer-col h3{font-size:13.5px;color:#e2eaf6;font-weight:700;margin-bottom:12px;}
+.footer-col a{display:block;font-size:12.5px;color:#8fa1bb;margin-bottom:8px;transition:color .15s;}
+.footer-col a:hover{color:#fff;}
+.footer-bottom{padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:#6c7f9c;}
+
+/* ---------- 回到顶部 ---------- */
+.back-top{
+  position:fixed;right:22px;bottom:26px;width:44px;height:44px;border-radius:50%;
+  background:var(--brand);color:#fff;border:none;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 18px rgba(31,111,235,.4);opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .25s,visibility .25s,transform .25s;z-index:70;
+}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.back-top svg{width:20px;height:20px;}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:1080px){
+  .layout{grid-template-columns:190px minmax(0,1fr);}
+  .aside-col{display:none;}
+  .pick-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .cat-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:30px;}
+  .hero-visual{height:220px;order:-1;}
+  .footer-top{grid-template-columns:1fr;gap:26px;}
+  .submit-panel{grid-template-columns:1fr;}
+  .guide-steps{grid-template-columns:1fr;}
+}
+@media (max-width:1024px){
+  .main-nav{display:none;}
+  .hamburger{display:flex;}
+  .header-search input{width:140px;}
+}
+@media (max-width:740px){
+  :root{--sticky-h:96px;}
+  .layout{grid-template-columns:1fr;gap:0;padding-top:24px;}
+  .channel-col{display:none;}
+  .comment-grid{grid-template-columns:1fr;}
+  .pick-grid{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .notice-inner{gap:10px;font-size:12px;}
+  .notice-more{display:none;}
+  .header-inner{gap:12px;padding:10px 16px;}
+  .brand-text{font-size:16px;}
+  .header-search{display:none;}
+  .hero{padding:40px 0 46px;}
+  .hero-sub{font-size:14.5px;}
+  .update-item{grid-template-columns:1fr;gap:2px;}
+  .update-date{font-size:11.5px;}
+  .news-item{grid-template-columns:1fr;}
+  .news-item img{width:100%;height:150px;}
+  .deep{padding:22px 18px;}
+  .overview{padding:20px 18px;}
+  .submit-panel{padding:24px 20px;}
+  .footer-cols{grid-template-columns:repeat(2,1fr);}
+  .back-top{right:14px;bottom:18px;width:40px;height:40px;}
+}
+
+/* 移动抽屉 */
+.drawer-mask{
+  display:none;position:fixed;inset:0;background:rgba(10,20,40,.45);z-index:80;
+}
+.drawer-mask.show{display:block;}
+.drawer{
+  position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:81;
+  transition:right .25s ease;padding:20px 16px;overflow-y:auto;box-shadow:-6px 0 24px rgba(0,0,0,.15);
+}
+.drawer.show{right:0;}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+.drawer-head strong{font-size:16px;}
+.drawer-close{width:34px;height:34px;border:1px solid var(--line);border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;}
+.drawer a{display:block;padding:10px 10px;border-radius:8px;font-size:14px;color:var(--ink-2);}
+.drawer a:hover{background:var(--brand-light);color:var(--brand-dark);}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px;}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="notice-bar" id="noticeBar">
+  <div class="notice-inner">
+    <span class="notice-brand">花都影视hdys电脑观看</span>
+    <span class="notice-item"><span class="notice-date">11月7日</span><span class="notice-sep">·</span>新增「雾山五行·犀川幻紫林」4K片源</span>
+    <span class="notice-item"><span class="notice-date">11月6日</span><span class="notice-sep">·</span>PotPlayer 字幕同步偏移修复教程上线</span>
+    <span class="notice-item"><span class="notice-date">11月8日</span><span class="notice-sep">·</span>本周热播榜已更新 12 部</span>
+    <a href="#latest" class="notice-more">查看更新 →</a>
+  </div>
+</div>
+
+<!-- 页头 -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#top" class="brand" aria-label="花都影视hdys电脑观看首页">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="2" y="2" width="36" height="36" rx="10" fill="#1f6feb"/>
+        <path d="M14 12.5v15l13-7.5-13-7.5z" fill="#fff"/>
+        <circle cx="31" cy="10" r="3" fill="#9fc4ff"/>
+      </svg>
+      <span class="brand-text">花都影视hdys电脑观看</span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#pick">精选片单</a>
+      <a href="#latest">最新更新</a>
+      <a href="#category">分类入口</a>
+      <a href="#deep">播放解析</a>
+      <a href="#guide">观看指南</a>
+      <a href="#faq">常见问题</a>
+      <a href="#comments">影迷评论</a>
+      <a href="#news">影视资讯</a>
+      <a href="#submit">投稿互动</a>
+    </nav>
+    <div class="header-search">
+      <input type="search" id="searchInput" placeholder="搜索片名/类型/标签" aria-label="站内搜索">
+    </div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false" aria-controls="drawer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1a2230" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- 移动抽屉 -->
+<div class="drawer-mask" id="drawerMask"></div>
+<aside class="drawer" id="drawer" aria-label="移动端导航">
+  <div class="drawer-head">
+    <strong>频道导航</strong>
+    <button class="drawer-close" id="drawerClose" aria-label="关闭菜单">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#1a2230" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <a href="#pick">精选片单</a>
+  <a href="#latest">最新更新</a>
+  <a href="#category">分类入口</a>
+  <a href="#deep">播放解析</a>
+  <a href="#guide">观看指南</a>
+  <a href="#faq">常见问题</a>
+  <a href="#comments">影迷评论</a>
+  <a href="#news">影视资讯</a>
+  <a href="#submit">投稿互动</a>
+  <a href="#rank">热度榜单</a>
+</aside>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-bg-orb orb-1"></div>
+  <div class="hero-bg-orb orb-2"></div>
+  <div class="wrap">
+    <div>
+      <h1>花都影视hdys电脑观看</h1>
+      <p class="hero-sub">电脑端看片这件事，卡在播放器、片源规格和字幕兼容上的时间往往比看电影本身还长。这里按 1080P / 4K、H.264 / H.265、内封字幕与外挂字幕等具体规格，整理片单、播放参数与排查方法，面向用 Windows 或 macOS 大屏追剧的人。</p>
+      <div class="hero-tags">
+        <span>4K HDR 片源</span>
+        <span>PotPlayer 参数</span>
+        <span>外挂字幕同步</span>
+        <span>H.265 硬解</span>
+        <span>双字幕对照</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#pick" class="btn-primary">浏览精选片单</a>
+        <a href="#deep" class="btn-ghost">播放参数解析</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 420 300" fill="none">
+        <rect x="40" y="36" width="340" height="206" rx="14" fill="#0b2244" stroke="#3b86f0" stroke-width="2"/>
+        <rect x="58" y="54" width="304" height="156" rx="6" fill="#123f7c"/>
+        <path d="M186 112v44l36-22-36-22z" fill="#8fc0ff" class="pulse"/>
+        <rect x="58" y="218" width="304" height="10" rx="5" fill="#1f6feb"/>
+        <rect x="140" y="242" width="140" height="12" rx="6" fill="#3b86f0"/>
+        <rect x="120" y="262" width="180" height="8" rx="4" fill="#1b3f74"/>
+        <circle cx="352" cy="66" r="9" fill="#9fc4ff" class="pulse"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 主体三栏 -->
+<div class="wrap">
+  <div class="layout">
+
+    <!-- 左频道 -->
+    <aside class="channel-col">
+      <nav class="channel-nav" aria-label="频道索引">
+        <div class="channel-title">频道索引</div>
+        <a href="#pick" class="active"><span class="dot"></span>精选片单</a>
+        <a href="#latest"><span class="dot"></span>最新更新</a>
+        <a href="#category"><span class="dot"></span>分类入口</a>
+        <a href="#deep"><span class="dot"></span>播放解析</a>
+        <a href="#guide"><span class="dot"></span>观看指南</a>
+        <a href="#faq"><span class="dot"></span>常见问题</a>
+        <a href="#comments"><span class="dot"></span>影迷评论</a>
+        <a href="#news"><span class="dot"></span>影视资讯</a>
+        <a href="#reco"><span class="dot"></span>相关推荐</a>
+        <a href="#rank"><span class="dot"></span>热度榜单</a>
+        <a href="#timeline"><span class="dot"></span>更新时间线</a>
+        <a href="#submit"><span class="dot"></span>投稿互动</a>
+      </nav>
+    </aside>
+
+    <!-- 中主内容 -->
+    <main class="main-col">
+
+      <!-- 概览 -->
+      <section class="section" id="overview">
+        <div class="section-head">
+          <h2>电脑观影领域概览</h2>
+        </div>
+        <div class="overview">
+          <p>电脑端看影视，和手机、电视盒子最大的差别在解码与渲染都交给本机。片源封装格式（MKV、MP4、TS）、视频编码（H.264、H.265/HEVC、AV1）、色深（8bit、10bit）和色彩空间（SDR、HDR10、杜比视界）之间，需要播放器、显卡驱动与渲染器三方配合。常见组合是 <strong>PotPlayer + LAV Filters + madVR</strong>，轻量路线则是 <strong>VLC 直接播放</strong>。近两年 4K HDR 片源普及，10bit HEVC 成为主流，但不少老笔记本的核显在 H.265 10bit 上会掉帧，需要开启硬解或改用软解加降分辨率。</p>
+          <p>字幕是第二个高频痛点。内封 PGS 图形字幕无法改字体，外挂 SRT 与 ASS 对时间轴偏移的容忍度不同，BDRip 与 WEB-DL 的帧率差异（23.976 与 25fps）常导致全程 4% 左右的音画错位。用 MKVToolNix 重封装、用 Subtitle Edit 调时间轴，是两条被反复验证的路径。</p>
+          <p>值得关注的方向有几类：院线片下线后的 4K 修复版（如《流浪地球2》的 60 帧版本争议）、流媒体独家的杜比视界片源、以及国产动画的 4K 重制（《雾山五行》《中国奇谭》系列）。纪录片和演唱会蓝光则更看重音轨，DTS-HD MA 与 TrueHD 需要支持源码输出的声卡或 HDMI 直通。</p>
+        </div>
+      </section>
+
+      <!-- 精选 -->
+      <section class="section" id="pick">
+        <div class="section-head">
+          <h2>精选片单：适合电脑大屏的 9 部</h2>
+          <span class="count">按画质规格与播放兼容性挑选</span>
+        </div>
+        <p class="section-lead">下列条目均在 2026 年 10 月至 11 月有新片源或修复版放出，标注了在电脑端播放时的实际注意点。</p>
+        <div class="pick-grid" id="pickGrid">
+
+          <article class="card pick-card" data-keywords="雾山五行 犀川幻紫林 国产动画 4K">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/wushan4k1/400/300" width="400" height="300" loading="lazy" alt="雾山五行犀川幻紫林水墨风格动画场景">
+              <span class="badge">国产动画</span>
+              <span class="score">9.2</span>
+            </div>
+            <div class="pick-body">
+              <h3>雾山五行·犀川幻紫林 4K 重制版</h3>
+              <div class="tag-row"><span class="tag">4K HEVC</span><span class="tag">水墨打斗</span><span class="tag">内封字幕</span></div>
+              <p>11月7日放出的 4K 版本采用 10bit HEVC 编码，打斗段落的粒子特效在高码率下明显更干净。核显机器建议开硬解，否则第 3 集火行对战段容易掉到 20 帧。</p>
+              <div class="pick-meta"><span class="heat">热度 98.6</span><span>11-07 更新</span></div>
+            </div>
+          </article>
+
+          <article class="card pick-card" data-keywords="流浪地球2 60帧 科幻 4K">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/liulangdiqiu2/400/300" width="400" height="300" loading="lazy" alt="流浪地球2行星发动机科幻场景">
+              <span class="badge">科幻</span>
+              <span class="score">8.9</span>
+            </div>
+            <div class="pick-body">
+              <h3>流浪地球2 60 帧高帧率版</h3>
+              <div class="tag-row"><span class="tag">60fps</span><span class="tag">HDR10</span><span class="tag">DTS-HD</span></div>
+              <p>60 帧版对显卡输出带宽要求高，用 DP 1.4 接 4K 显示器需确认刷新率同步。空间站坠落段的运动模糊减少，但部分观众反馈"太顺滑反而失真"。</p>
+              <div class="pick-meta"><span class="heat">热度 96.2</span><span>11-05 更新</span></div>
+            </div>
+          </article>
+
+          <article class="card pick-card" data-keywords="中国奇谭 短片集 4K 修复">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/zhongguoqitan/400/300" width="400" height="300" loading="lazy" alt="中国奇谭短片集水墨与剪纸风格画面">
+              <span class="badge">短片集</span>
+              <span class="score">9.0</span>
+            </div>
+            <div class="pick-body">
+              <h3>中国奇谭 全 8 集 4K 修复合集</h3>
+              <div class="tag-row"><span class="tag">短片集</span><span class="tag">多画风</span><span class="tag">外挂 ASS</span></div>
+              <p>8 个短片画风跨度大，《小妖怪的夏天》偏二维，《鹅鹅鹅》用默片式构图。外挂 ASS 字幕带特效定位，用 VLC 播放需开启"字幕特效渲染"才不出错位。</p>
+              <div class="pick-meta"><span class="heat">热度 91.4</span><span>11-03 更新</span></div>
+            </div>
+          </article>
+
+          <article class="card pick-card" data-keywords="沙丘2 杜比视界 科幻">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/shadiu2/400/300" width="400" height="300" loading="lazy" alt="沙丘2沙漠星球宏大场景">
+              <span class="badge">科幻</span>
+              <span class="score">8.7</span>
+            </div>
+            <div class="pick-body">
+              <h3>沙丘2 杜比视界版</h3>
+              <div class="tag-row"><span class="tag">杜比视界</span><span class="tag">宽银幕</span><span class="tag">TrueHD</span></div>
+              <p>杜比视界片源在普通 SDR 显示器上会发灰，需 madVR 做色调映射。沙虫骑乘段的暗部层次在映射正确时能看出细节，映射参数不对则一片死黑。</p>
+              <div class="pick-meta"><span class="heat">热度 89.7</span><span>11-01 更新</span></div>
+            </div>
+          </article>
+
+          <article class="card pick-card" data-keywords="繁花 剧集 4K 沪语">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/fanhua/400/300" width="400" height="300" loading="lazy" alt="繁花剧集上海黄河路霓虹夜景">
+              <span class="badge">剧集</span>
+              <span class="score">8.8</span>
+            </div>
+            <div class="pick-body">
+              <h3>繁花 4K 沪语原声版</h3>
+              <div class="tag-row"><span class="tag">剧集</span><span class="tag">沪语原声</span><span class="tag">双字幕</span></div>
+              <p>沪语版与普通话版台词节奏差异明显，黄河路夜戏的霓虹光晕在 4K 下层次更足。双字幕对照时，建议把沪语字幕放上方、普通话放下方，避免遮挡。</p>
+              <div class="pick-meta"><span class="heat">热度 87.3</span><span>10-29 更新</span></div>
+            </div>
+          </article>
+
+          <article class="card pick-card" data-keywords="宇宙探索编辑部 文艺 独立电影">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/yuzhoutansuo/400/300" width="400" height="300" loading="lazy" alt="宇宙探索编辑部手持摄影风格剧照">
+              <span class="badge">独立电影</span>
+              <span class="score">8.6</span>
+            </div>
+            <div class="pick-body">
+              <h3>宇宙探索编辑部 1080P 蓝光版</h3>
+              <div class="tag-row"><span class="tag">手持摄影</span><span class="tag">伪纪录片</span><span class="tag">外挂 SRT</span></div>
+              <p>伪纪录片式的手持镜头在电脑小窗播放会晃得难受，建议全屏并调低亮度。蓝光版含导演评论音轨，需在播放器里手动切换第二音轨。</p>
+              <div class="pick-meta"><span class="heat">热度 84.1</span><span>10-27 更新</span></div>
+            </div>
+          </article>
+
+          <article class="card pick-card" data-keywords="狂飙 剧集 1080P 悬疑">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/kuangbiao/400/300" width="400" height="300" loading="lazy" alt="狂飙剧集京海市街景与人物对峙">
+              <span class="badge">剧集</span>
+              <span class="score">8.5</span>
+            </div>
+            <div class="pick-body">
+              <h3>狂飙 全 39 集 1080P 完整版</h3>
+              <div class="tag-row"><span class="tag">悬疑</span><span class="tag">39集</span><span class="tag">内封字幕</span></div>
+              <p>完整版含台词语气更足的段落，与卫视剪辑版在 12 集后有明显差异。连播时注意播放器的"自动下一集"缓存策略，机械硬盘读大文件会卡在片头。</p>
+              <div class="pick-meta"><span class="heat">热度 82.9</span><span>10-25 更新</span></div>
+            </div>
+          </article>
+
+          <article class="card pick-card" data-keywords="铃芽之旅 新海诚 动画电影">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/lingyazhilv/400/300" width="400" height="300" loading="lazy" alt="铃芽之旅新海诚风格废墟与门场景">
+              <span class="badge">动画电影</span>
+              <span class="score">8.4</span>
+            </div>
+            <div class="pick-body">
+              <h3>铃芽之旅 4K HDR 日版蓝光</h3>
+              <div class="tag-row"><span class="tag">4K HDR</span><span class="tag">新海诚</span><span class="tag">PGS 字幕</span></div>
+              <p>日版蓝光内封 PGS 图形字幕，无法调字号。常世段落的高光在 HDR 显示器上有明显爆发力，SDR 屏幕需靠色调映射压住，否则天空一片白。</p>
+              <div class="pick-meta"><span class="heat">热度 80.5</span><span>10-22 更新</span></div>
+            </div>
+          </article>
+
+          <article class="card pick-card" data-keywords="漫长的季节 剧集 悬疑 东北">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/manchangdejijie/400/300" width="400" height="300" loading="lazy" alt="漫长的季节东北工业城市秋季场景">
+              <span class="badge">剧集</span>
+              <span class="score">9.1</span>
+            </div>
+            <div class="pick-body">
+              <h3>漫长的季节 12 集 4K 修复版</h3>
+              <div class="tag-row"><span class="tag">4K 修复</span><span class="tag">东北</span><span class="tag">多时间线</span></div>
+              <p>三条时间线交叉，电脑端看容易漏掉字幕里的年份提示。建议开启播放器的"字幕位置记录"，并在第 6 集切换时暂停核对时间线，否则容易把两代人的戏看混。</p>
+              <div class="pick-meta"><span class="heat">热度 88.0</span><span>10-20 更新</span></div>
+            </div>
+          </article>
+
+        </div>
+        <div class="no-result" id="noResult">没有匹配的条目，换个片名、类型或标签试试，比如「4K」「剧集」「动画」。</div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="section" id="latest">
+        <div class="section-head">
+          <h2>最新更新与片源动态</h2>
+          <span class="count">11月1日—11月8日</span>
+        </div>
+        <div class="update-list">
+          <div class="update-item"><span class="update-date">11-08</span><div><h3>《繁花》4K 沪语版追加第 2 音轨</h3><span class="desc">新增导演与编剧对谈音轨，时长 47 分钟，需在播放器音轨菜单手动选择。</span></div><span class="update-tag">剧集</span></div>
+          <div class="update-item"><span class="update-date">11-07</span><div><h3>《雾山五行·犀川幻紫林》4K HEVC 片源上线</h3><span class="desc">码率 18Mbps，10bit 色深，核显需开启 DXVA2 硬解，否则第 3 集掉帧。</span></div><span class="update-tag">动画</span></div>
+          <div class="update-item"><span class="update-date">11-06</span><div><h3>PotPlayer 字幕同步偏移教程更新</h3><span class="desc">针对 23.976 与 25fps 帧率差导致的 4% 错位，给出毫秒级手动补偿步骤。</span></div><span class="update-tag">教程</span></div>
+          <div class="update-item"><span class="update-date">11-05</span><div><h3>《流浪地球2》60 帧版补发 HDR10 元数据</h3><span class="desc">修复此前部分播放器识别为 SDR 的问题，需重新下载 2.3GB 的元数据补丁。</span></div><span class="update-tag">科幻</span></div>
+          <div class="update-item"><span class="update-date">11-04</span><div><h3>《中国奇谭》外挂 ASS 字幕包 v3 发布</h3><span class="desc">修正《鹅鹅鹅》默片段落字幕提前 800ms 的问题，共 8 个文件替换。</span></div><span class="update-tag">动画</span></div>
+          <div class="update-item"><span class="update-date">11-03</span><div><h3>《沙丘2》杜比视界版色调映射参数表</h3><span class="desc">列出 madVR 在 1000nit 与 600nit 显示器下的两组推荐参数，附对比截图。</span></div><span class="update-tag">科幻</span></div>
+          <div class="update-item"><span class="update-date">11-02</span><div><h3>《狂飙》完整版第 12 集音画不同步修复</h3><span class="desc">原片源在该集 18 分 22 秒处有 300ms 偏移，重新封装后已对齐。</span></div><span class="update-tag">剧集</span></div>
+          <div class="update-item"><span class="update-date">11-01</span><div><h3>《漫长的季节》4K 修复版第 6 集时间线提示</h3><span class="desc">新增字幕注释，标出 1998、2016 两条时间线的切换节点，共 5 处。</span></div><span class="update-tag">剧集</span></div>
+          <div class="update-item"><span class="update-date">10-31</span><div><h3>《铃芽之旅》日版蓝光 PGS 字幕提取工具更新</h3><span class="desc">支持将 PGS 转为 SRT，转换后特效定位丢失，仅建议用于纯对白段落。</span></div><span class="update-tag">动画</span></div>
+          <div class="update-item"><span class="update-date">10-30</span><div><h3>VLC 3.0.21 修复 H.265 10bit 软解崩溃</h3><span class="desc">针对 AMD 核显在 4K 10bit 片源上的崩溃问题，更新日志标注为解码器回归修复。</span></div><span class="update-tag">工具</span></div>
+        </div>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="section" id="category">
+        <div class="section-head">
+          <h2>按类型与规格分类</h2>
+        </div>
+        <p class="section-lead">点击分类可查看对应片单与播放参数说明。</p>
+        <div class="cat-grid">
+          <a class="cat-item" href="#pick"><h3>4K HDR 片源</h3><p>杜比视界、HDR10 与色调映射参数</p><span class="cat-count">收录 42 部</span></a>
+          <a class="cat-item" href="#pick"><h3>国产动画 4K</h3><p>水墨、二维与三维重制版对比</p><span class="cat-count">收录 26 部</span></a>
+          <a class="cat-item" href="#pick"><h3>60 帧高帧率</h3><p>显示器刷新率与显卡输出带宽</p><span class="cat-count">收录 11 部</span></a>
+          <a class="cat-item" href="#pick"><h3>剧集连播</h3><p>多集缓存、自动下一集与音轨切换</p><span class="cat-count">收录 58 部</span></a>
+          <a class="cat-item" href="#deep"><h3>H.265 硬解</h3><p>核显、独显与 DXVA2 解码路径</p><span class="cat-count">教程 9 篇</span></a>
+          <a class="cat-item" href="#deep"><h3>外挂字幕</h3><p>SRT、ASS 特效与时间轴同步</p><span class="cat-count">教程 14 篇</span></a>
+          <a class="cat-item" href="#pick"><h3>独立电影</h3><p>手持摄影、伪纪录片与画幅比例</p><span class="cat-count">收录 19 部</span></a>
+          <a class="cat-item" href="#pick"><h3>日版蓝光</h3><p>PGS 图形字幕与日语音轨</p><span class="cat-count">收录 23 部</span></a>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="section" id="deep">
+        <div class="section-head">
+          <h2>播放解析：电脑端画质与兼容性判断</h2>
+        </div>
+        <article class="deep">
+          <p>同一部片子在不同电脑上放出来的效果，差距可能比片源本身的版本差异还大。原因不在片源，在解码链路。把这条链路拆开看，大致是：文件封装 → 分离器 → 视频解码器 → 渲染器 → 显示器。任何一环不匹配，画质或流畅度都会打折。</p>
+
+          <h3>编码格式：H.264 与 H.265 的实际取舍</h3>
+          <p>H.265（HEVC）在同等画质下比 H.264 省约 40%—50% 码率，这是 4K 片源普遍采用它的直接原因。代价是解码复杂度上升。一台 2019 年的轻薄本，MX250 独显解 4K H.265 10bit 基本能跑满 24 帧；换成 8 代 i5 的 UHD 620 核显，软解只能到 15 帧上下，必须开硬解。硬解是否可用，取决于显卡是否支持 Main10 Profile——UHD 620 支持，但驱动版本低于 27.20.100.8681 时会回退到软解。</p>
+          <p>AV1 是更晚的变量。2026 年新出的片源里 AV1 占比上升，RTX 30 系之后的显卡有硬件解码单元，20 系及更早只能软解，4K 下基本不可用。判断方法很直接：在播放器里看"解码器"一栏是否显示 D3D11VA 或 DXVA2，显示"ffmpeg software"就是软解。</p>
+
+          <h3>色调映射：杜比视界在 SDR 屏幕上的处理</h3>
+          <p>杜比视界片源在普通 SDR 显示器上播放，如果不做色调映射，画面会整体发灰、暗部细节丢失。madVR 的 HDR 转 SDR 功能是常见解法，但参数设置差异极大。以 600nit 显示器为例，把"目标峰值亮度"设为 600、"hdr 转 sdr 伽马"设为 2.2，暗部能保住层次；设成 1000nit 则高光被压、暗部过曝。这组参数的差别，在《沙丘2》沙虫出场那场夜戏里一目了然——映射对了能看清沙粒反光，映射错了只剩一团黑。</p>
+          <div class="quote-box">判断色调映射是否到位，不用看全片。找一段有天空与阴影同框的镜头，天空不过曝成白块、阴影里还能分辨物体轮廓，基本就对了。</div>
+
+          <h3>字幕兼容：三类字幕的实际差异</h3>
+          <p>字幕的坑集中在时间轴和渲染方式上。</p>
+          <table>
+            <thead><tr><th>字幕类型</th><th>可否改字体字号</th><th>常见问题</th><th>处理方式</th></tr></thead>
+            <tbody>
+              <tr><td>内封 PGS</td><td>否</td><td>无法调大小，小屏看不清</td><td>提取后转 SRT，特效丢失</td></tr>
+              <tr><td>外挂 SRT</td><td>是</td><td>帧率差导致全程偏移</td><td>Subtitle Edit 整体平移</td></tr>
+              <tr><td>外挂 ASS</td><td>是</td><td>特效定位错乱</td><td>播放器开字幕特效渲染</td></tr>
+            </tbody>
+          </table>
+          <p>帧率差是最隐蔽的问题。23.976fps 的 BDRip 配 25fps 的字幕，前 10 分钟可能只差 0.5 秒，到片尾能差出 4 秒以上。判断方法：跳到片尾字幕前最后一个对白，看字幕是否还在。在的话，中间某处一定有累积偏移，用 Subtitle Edit 的"按帧率同步"功能，输入 23.976 和 25 两个数值，工具会自动重算时间轴。</p>
+
+          <h3>播放器组合：两条路线的适用场景</h3>
+          <p>PotPlayer + LAV Filters + madVR 的组合，优势在渲染质量和参数可控，代价是配置门槛。适合固定一台机器长期看片、愿意花两小时调一次参数的人。VLC 直接播放的优势是开箱即用，H.265 硬解在 3.0.18 之后基本自动开启，适合换机器频繁、或者临时在别人电脑上看片的情况。第三条路是 MPV，配置文件驱动，社区有现成的高质量配置包，适合愿意折腾配置文件的人。</p>
+          <p>需要提醒的是，madVR 作者已停止更新，2026 年新显卡驱动下偶有兼容问题。社区维护的分支版本在 GitHub 上有更新记录，最近一次是 10 月 28 日，修复了 RTX 50 系显卡的 HDR 元数据读取异常。</p>
+        </article>
+      </section>
+
+      <!-- 指南 -->
+      <section class="section" id="guide">
+        <div class="section-head">
+          <h2>观影指南：按顺序判断值不值得投入时间</h2>
+        </div>
+        <div class="guide-steps">
+          <div class="step-card"><div class="step-num">1</div><div><h3>先看片源规格，再看评分</h3><p>1080P 与 4K 的观感差距在 27 寸以上显示器才明显。片子本身评价一般，4K 修复也救不回剧情，先看条目类型和导演前作更实际。</p></div></div>
+          <div class="step-card"><div class="step-num">2</div><div><h3>确认字幕是否可调</h3><p>内封 PGS 字幕在小窗口下常常看不清。如果片源只有 PGS，先准备好外挂 SRT 再开始看，中途停下来找字幕最破坏节奏。</p></div></div>
+          <div class="step-card"><div class="step-num">3</div><div><h3>试播 5 分钟看帧率稳定性</h3><p>开播放器的帧率显示，找动作最密集的一段。帧率在 23—24 之间小幅波动正常，掉到 18 以下说明解码跟不上，换硬解或降分辨率。</p></div></div>
+          <div class="step-card"><div class="step-num">4</div><div><h3>剧集先看第 1 集与第 6 集</h3><p>长剧集在中段常有节奏变化。第 6 集往往是分水岭，两集都能接受再决定连播，避免看到一半弃剧浪费的时间。</p></div></div>
+          <div class="step-card"><div class="step-num">5</div><div><h3>同类条目按画幅与音轨比较</h3><p>宽银幕 2.39:1 在 16:9 显示器上有黑边，动画电影多用 1.85:1。音轨方面，DTS-HD MA 需要支持源码输出的设备，否则降级为立体声。</p></div></div>
+          <div class="step-card"><div class="step-num">6</div><div><h3>纪录片与演唱会优先看音轨规格</h3><p>这类内容画面变化少，音质权重更高。TrueHD 与 DTS-HD MA 的差别在 5.1 音响上能听出来，用耳机则意义不大，选码率更高的版本即可。</p></div></div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <div class="section-head">
+          <h2>常见问题</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>4K H.265 片源在笔记本上播放卡顿，是硬件不行吗？</summary>
+            <div class="faq-body">先看解码器状态。播放器显示"ffmpeg software"说明在软解，4K 10bit 软解对 CPU 要求极高，8 代 i5 基本跑不动。开启硬解后仍卡，检查显卡驱动版本，UHD 620 需 27.20.100.8681 以上才稳定支持 Main10。驱动没问题还卡，就是显存带宽不足，降到 1080P 播放是更实际的选择。</div>
+          </details>
+          <details>
+            <summary>外挂字幕全程越看越偏，是什么原因？</summary>
+            <div class="faq-body">帧率不匹配。23.976fps 的片源配 25fps 的字幕，每 1000 秒会累积约 42 秒偏移，但多数人只在前 10 分钟察觉不到。用 Subtitle Edit 打开字幕，选"同步 → 按帧率调整"，输入片源与字幕各自的帧率，工具会重算全部时间轴。调整后跳到最后一段对白验证，字幕仍准才算成功。</div>
+          </details>
+          <details>
+            <summary>杜比视界片源在普通显示器上发灰，怎么调？</summary>
+            <div class="faq-body">杜比视界是动态元数据格式，SDR 显示器无法直接呈现，必须做色调映射。madVR 的 HDR 转 SDR 功能是常用方案，把目标峰值亮度设为显示器实际亮度（常见 300—600nit），伽马设 2.2。参数不对时画面要么过曝要么死黑，找一段天空与阴影同框的镜头做对照，能同时看清两者就算调对了。</div>
+          </details>
+          <details>
+            <summary>内封 PGS 字幕太小，能改吗？</summary>
+            <div class="faq-body">PGS 是图形字幕，本质是一张张图片叠在画面上，播放器无法改字号。可行的做法是用 MKVExtractGUI 或 ffmpeg 把 PGS 提取出来，再用 Subtitle Edit 的 OCR 功能转成 SRT 文本字幕。转换会丢失特效定位，对白类的字幕影响不大，带复杂排版的字幕则不建议转。</div>
+          </details>
+          <details>
+            <summary>60 帧版电影和 24 帧原版，观感差别在哪？</summary>
+            <div class="faq-body">60 帧版通过插帧或原生高帧率拍摄实现。动作场面更顺滑，但电影感会减弱，部分观众描述为"像在看游戏过场"。原生 60 帧拍摄的片子（如部分高帧率实验作品）观感自然，插帧生成的 60 帧在快速摇镜时容易出伪影。选哪个版本，取决于更在意流畅度还是传统电影的运动模糊质感。</div>
+          </details>
+          <details>
+            <summary>同一部剧的完整版和卫视剪辑版，差在哪？</summary>
+            <div class="faq-body">主要在台词密度和支线保留。以《狂飙》为例，完整版 39 集，卫视剪辑版约 36 集，差异集中在第 12 集之后的反派支线。剪辑版删减的多是过渡戏，主线不受影响，但人物动机的铺垫会变薄。看剧追求完整叙事选完整版，只想快速了解主线选剪辑版，两者在关键情节上并不冲突。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 评论 -->
+      <section class="section" id="comments">
+        <div class="section-head">
+          <h2>影迷评论</h2>
+          <span class="count">16 条</span>
+        </div>
+        <div class="comment-grid">
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#3b86f0">林</div><span class="comment-name">林间有风</span><span class="comment-time">11-08 09:12</span></div><p class="comment-text">《雾山五行》4K 版火行那段打斗，粒子效果真的顶。就是核显跑不动，最后拿台式机独显才顺畅看完。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#e08b2c">陈</div><span class="comment-name">陈默看片</span><span class="comment-time">11-07 22:40</span></div><p class="comment-text">60 帧的流浪地球2，空间站坠落那段确实顺，但人物对话时有点"电视剧感"，说不上来。可能是我看惯了 24 帧。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#3f8f4f">周</div><span class="comment-name">周末补剧</span><span class="comment-time">11-07 18:03</span></div><p class="comment-text">繁花沪语版第二音轨那个对谈，47 分钟听完了，讲黄河路取景的部分挺有意思。普通话音轨反而没那味道。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#8a63d2">阿</div><span class="comment-name">阿茶不喝茶</span><span class="comment-time">11-06 23:55</span></div><p class="comment-text">沙丘2杜比视界在我这破显示器上怎么调都灰，照着参数表设了 600nit 好一点，但暗部还是糊。估计得换屏。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#d9534f">小</div><span class="comment-name">小满的硬盘</span><span class="comment-time">11-06 15:20</span></div><p class="comment-text">狂飙完整版第 12 集音画不同步那个修复，下完重新封装确实对齐了。之前看的时候老觉得嘴型对不上，还以为是自己设备问题。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#1f6feb">老</div><span class="comment-name">老张的投影仪</span><span class="comment-time">11-05 21:11</span></div><p class="comment-text">中国奇谭那个 ASS 字幕包 v3，鹅鹅鹅默片段落终于不提前了。之前每次都要手动调 800ms，烦得很。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#e08b2c">看</div><span class="comment-name">看片不看弹幕</span><span class="comment-time">11-05 12:34</span></div><p class="comment-text">漫长的季节三条时间线，第 6 集那个注释真的有用。我第一次看的时候把 1998 和 2016 看混了，重看才理清。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#3b86f0">s</div><span class="comment-name">soda_冰</span><span class="comment-time">11-04 19:47</span></div><p class="comment-text">铃芽之旅日版蓝光的 PGS 字幕是真的小，27 寸屏看着费劲。转 SRT 之后字体舒服多了，就是特效没了有点可惜。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#3f8f4f">磁</div><span class="comment-name">磁力老猫</span><span class="comment-time">11-04 10:02</span></div><p class="comment-text">VLC 3.0.21 更新之后 AMD 核显终于不崩了，之前放 4K 10bit 直接闪退，现在能看完一整部。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#8a63d2">宇</div><span class="comment-name">宇宙编辑部粉丝</span><span class="comment-time">11-03 23:18</span></div><p class="comment-text">宇宙探索编辑部在小窗看真的晃得头晕，全屏好一点。手持镜头这种东西，屏幕越大反而越稳，挺反直觉的。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#d9534f">罐</div><span class="comment-name">罐头里的鱼</span><span class="comment-time">11-03 14:30</span></div><p class="comment-text">madVR 作者不更新这事有点担心，现在新驱动下偶尔花屏。社区分支版还没试，有人用过的说说稳不稳。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#1f6feb">夜</div><span class="comment-name">夜航船</span><span class="comment-time">11-02 20:05</span></div><p class="comment-text">H.265 硬解那个判断方法挺实用，看解码器那栏是不是 D3D11VA。以前一直以为在软解，原来驱动太旧。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#e08b2c">不</div><span class="comment-name">不吃香菜</span><span class="comment-time">11-02 11:26</span></div><p class="comment-text">繁花双字幕对照那个建议靠谱。沪语上普通话下，确实不挡画面。之前上下放反了，眼睛老要往上瞟。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#3f8f4f">半</div><span class="comment-name">半个影迷</span><span class="comment-time">11-01 16:40</span></div><p class="comment-text">说真的，片源再好剧情不行也白搭。前阵子下了几部 4K 修复的老片，看了二十分钟就关了，画质救不了故事。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#8a63d2">路</div><span class="comment-name">路口有猫</span><span class="comment-time">10-31 09:15</span></div><p class="comment-text">AV1 片源现在多起来了，我 2060 只能软解，4K 直接卡成 PPT。看来是时候换显卡了。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar" style="background:#d9534f">一</div><span class="comment-name">一只投影仪</span><span class="comment-time">10-30 21:58</span></div><p class="comment-text">狂飙完整版和剪辑版我都看过，第 12 集后面反派支线确实差挺多。剪辑版人物动机说服力弱一些，但不影响主线。</p></div>
+        </div>
+      </section>
+
+      <!-- 资讯 -->
+      <section class="section" id="news">
+        <div class="section-head">
+          <h2>相关资讯</h2>
+        </div>
+        <div class="news-list">
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news-madvr/600/400" width="600" height="400" loading="lazy" alt="madVR社区分支更新界面截图">
+            <div><h3>madVR 社区分支 10 月 28 日更新，修复 RTX 50 系 HDR 元数据读取</h3><span class="news-date">2026-11-06</span><p>维护者在 GitHub 提交记录中写明，问题出在 RTX 50 系显卡驱动返回的元数据类型标识变更，导致旧版解析失败。本次更新同时调整了 600nit 显示器下的默认色调映射曲线。</p></div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news-vlc/600/400" width="600" height="400" loading="lazy" alt="VLC播放器3.0.21版本更新日志">
+            <div><h3>VLC 3.0.21 发布，AMD 核显 4K 10bit 软解崩溃问题关闭</h3><span class="news-date">2026-10-30</span><p>更新日志把该问题归为解码器回归缺陷，影响范围是 3.0.19 至 3.0.20 版本。开发者在社区帖中建议 AMD 用户升级后清除播放器缓存再测试，避免旧配置残留。</p></div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news-wushan/600/400" width="600" height="400" loading="lazy" alt="雾山五行4K重制版片源发布公告">
+            <div><h3>《雾山五行》4K 重制版 11 月 7 日放出，码率提至 18Mbps</h3><span class="news-date">2026-11-07</span><p>发布方在说明中标注为 10bit HEVC 编码，第 3 集火行对战段为全片最高码率段落。同时提供了一份 1080P 兼容版本，供核显设备使用。</p></div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news-liulang/600/400" width="600" height="400" loading="lazy" alt="流浪地球2 60帧版HDR10元数据补丁说明">
+            <div><h3>《流浪地球2》60 帧版补发 HDR10 元数据，补丁大小 2.3GB</h3><span class="news-date">2026-11-05</span><p>此前部分播放器将该片源识别为 SDR，导致高光细节丢失。补丁仅替换元数据轨道，不影响正片码流，已下载的用户可单独安装。</p></div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news-fanhua/600/400" width="600" height="400" loading="lazy" alt="繁花4K沪语版第二音轨上线">
+            <div><h3>《繁花》4K 沪语版追加 47 分钟导演对谈音轨</h3><span class="news-date">2026-11-08</span><p>音轨内容围绕黄河路实景拍摄与灯光布置展开，含编剧对沪语台词节奏的说明。播放器需手动切换第二音轨，默认为沪语正片音轨。</p></div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news-ass/600/400" width="600" height="400" loading="lazy" alt="中国奇谭外挂ASS字幕包v3更新说明">
+            <div><h3>《中国奇谭》外挂 ASS 字幕包 v3 修正 800ms 提前问题</h3><span class="news-date">2026-11-04</span><p>字幕组在发布帖中说明，问题源于《鹅鹅鹅》默片段落的帧率标注错误，共涉及 8 个文件。已下载旧版的用户替换对应文件即可，无需重下全包。</p></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="section" id="reco">
+        <div class="section-head">
+          <h2>相关推荐方向</h2>
+        </div>
+        <div class="reco-tags">
+          <a href="#deep">H.265 10bit 硬解设置</a>
+          <a href="#deep">PGS 字幕转 SRT</a>
+          <a href="#guide">23.976 与 25fps 帧率对照</a>
+          <a href="#pick">杜比视界片源清单</a>
+          <a href="#deep">madVR 色调映射参数</a>
+          <a href="#guide">剧集连播缓存优化</a>
+          <a href="#pick">国产动画 4K 重制</a>
+          <a href="#deep">AV1 软解与硬解对比</a>
+        </div>
+      </section>
+
+      <!-- 榜单 -->
+      <section class="section" id="rank">
+        <div class="section-head">
+          <h2>本周电脑端播放热度榜</h2>
+          <span class="count">11月1日—11月8日</span>
+        </div>
+        <div class="rank-list">
+          <div class="rank-item"><span class="rank-num">1</span><h3>雾山五行·犀川幻紫林 4K 重制版</h3><span class="rank-type">国产动画</span><span class="rank-heat">98.6</span></div>
+          <div class="rank-item"><span class="rank-num">2</span><h3>流浪地球2 60 帧高帧率版</h3><span class="rank-type">科幻</span><span class="rank-heat">96.2</span></div>
+          <div class="rank-item"><span class="rank-num">3</span><h3>漫长的季节 4K 修复版</h3><span class="rank-type">剧集</span><span class="rank-heat">88.0</span></div>
+          <div class="rank-item"><span class="rank-num">4</span><h3>繁花 4K 沪语原声版</h3><span class="rank-type">剧集</span><span class="rank-heat">87.3</span></div>
+          <div class="rank-item"><span class="rank-num">5</span><h3>沙丘2 杜比视界版</h3><span class="rank-type">科幻</span><span class="rank-heat">89.7</span></div>
+          <div class="rank-item"><span class="rank-num">6</span><h3>中国奇谭 全 8 集 4K 修复合集</h3><span class="rank-type">短片集</span><span class="rank-heat">91.4</span></div>
+          <div class="rank-item"><span class="rank-num">7</span><h3>狂飙 全 39 集 1080P 完整版</h3><span class="rank-type">剧集</span><span class="rank-heat">82.9</span></div>
+          <div class="rank-item"><span class="rank-num">8</span><h3>铃芽之旅 4K HDR 日版蓝光</h3><span class="rank-type">动画电影</span><span class="rank-heat">80.5</span></div>
+        </div>
+      </section>
+
+      <!-- 时间线 -->
+      <section class="section" id="timeline">
+        <div class="section-head">
+          <h2>片源更新时间线</h2>
+        </div>
+        <div class="timeline">
+          <div class="tl-item"><span class="tl-date">11-08</span><h3>繁花 4K 沪语版第 2 音轨上线</h3><p>导演与编剧对谈，47 分钟，手动切换音轨。</p></div>
+          <div class="tl-item"><span class="tl-date">11-07</span><h3>雾山五行 4K HEVC 片源放出</h3><p>18Mbps，10bit，核显需开 DXVA2。</p></div>
+          <div class="tl-item"><span class="tl-date">11-05</span><h3>流浪地球2 60 帧版 HDR10 元数据补丁</h3><p>2.3GB，仅替换元数据轨道。</p></div>
+          <div class="tl-item"><span class="tl-date">11-04</span><h3>中国奇谭 ASS 字幕包 v3</h3><p>修正鹅鹅鹅默片段落 800ms 提前，8 个文件。</p></div>
+          <div class="tl-item"><span class="tl-date">11-02</span><h3>狂飙完整版第 12 集音画同步修复</h3><p>原 18 分 22 秒处 300ms 偏移已对齐。</p></div>
+        </div>
+      </section>
+
+      <!-- 投稿互动 -->
+      <section class="section" id="submit">
+        <div class="submit-panel">
+          <div>
+            <h2>投稿与片源交流</h2>
+            <p>手上有调好的 madVR 参数、适配好的外挂字幕，或者发现某部片子存在音画偏移，可以提交到片源交流区。提交时请注明片源规格（分辨率、编码、帧率）和播放器版本，方便其他人复现。</p>
+          </div>
+          <div class="submit-actions">
+            <a href="#submit" class="btn-primary">提交播放参数</a>
+            <a href="#submit" class="btn-ghost">上传字幕文件</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="aside-col">
+      <div class="side-card">
+        <h2>本周热榜</h2>
+        <div class="side-hot">
+          <a href="#pick"><span class="n">1</span>雾山五行 4K 重制版</a>
+          <a href="#pick"><span class="n">2</span>流浪地球2 60 帧版</a>
+          <a href="#pick"><span class="n">3</span>漫长的季节 4K 修复</a>
+          <a href="#pick"><span class="n">4</span>繁花 沪语原声版</a>
+          <a href="#pick"><span class="n">5</span>沙丘2 杜比视界版</a>
+          <a href="#pick"><span class="n">6</span>中国奇谭 4K 合集</a>
+        </div>
+      </div>
+      <div class="side-card">
+        <h2>播放参数速查</h2>
+        <div class="side-list">
+          <a href="#deep">H.265 硬解判断 <span>D3D11VA</span></a>
+          <a href="#deep">杜比视界映射 <span>600nit</span></a>
+          <a href="#deep">帧率同步 <span>23.976/25</span></a>
+          <a href="#deep">ASS 特效渲染 <span>VLC 设置</span></a>
+          <a href="#guide">连播缓存 <span>机械硬盘</span></a>
+        </div>
+      </div>
+      <div class="side-card">
+        <h2>热门标签</h2>
+        <div class="side-tags">
+          <a href="#pick">4K HDR</a>
+          <a href="#pick">国产动画</a>
+          <a href="#deep">H.265</a>
+          <a href="#deep">外挂字幕</a>
+          <a href="#pick">60 帧</a>
+          <a href="#deep">色调映射</a>
+          <a href="#pick">剧集连播</a>
+          <a href="#guide">帧率差</a>
+        </div>
+      </div>
+      <div class="side-card side-cta">
+        <h2>片源交流区</h2>
+        <p>调好的播放器参数、适配好的字幕，提交时附上规格信息，方便他人复现。</p>
+        <a href="#submit" class="btn-primary">前往投稿</a>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-text">花都影视hdys电脑观看</span>
+        <p>覆盖 2026 年 10 月至 11 月的 4K 修复、60 帧高帧率与杜比视界片源，条目类型含剧集、动画、独立电影与日版蓝光。每周三、周日更新片源规格与播放参数，字幕包按版本号单独发布。</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h3>片单频道</h3>
+          <a href="#pick">精选片单</a>
+          <a href="#latest">最新更新</a>
+          <a href="#category">分类入口</a>
+          <a href="#rank">热度榜单</a>
+        </div>
+        <div class="footer-col">
+          <h3>播放支持</h3>
+          <a href="#deep">播放解析</a>
+          <a href="#guide">观影指南</a>
+          <a href="#faq">常见问题</a>
+          <a href="#timeline">更新时间线</a>
+        </div>
+        <div class="footer-col">
+          <h3>交流互动</h3>
+          <a href="#comments">影迷评论</a>
+          <a href="#news">影视资讯</a>
+          <a href="#reco">相关推荐</a>
+          <a href="#submit">投稿互动</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>页面内容为示例条目，片源规格、评分与热度均为演示数据，不构成下载或播放指引。</span>
+      <span>更新于 2026-11-08</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  // 搜索筛选
+  var input = document.getElementById('searchInput');
+  var grid = document.getElementById('pickGrid');
+  var noResult = document.getElementById('noResult');
+  if(input && grid){
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.pick-card'));
+    input.addEventListener('input', function(){
+      var q = input.value.trim().toLowerCase();
+      var shown = 0;
+      cards.forEach(function(card){
+        var text = (card.textContent + ' ' + (card.getAttribute('data-keywords')||'')).toLowerCase();
+        var hit = !q || text.indexOf(q) > -1;
+        card.classList.toggle('is-hidden', !hit);
+        if(hit) shown++;
+      });
+      noResult.classList.toggle('show', shown === 0);
+    });
+  }
+
+  // 抽屉
+  var hamburger = document.getElementById('hamburgerBtn');
+  var drawer = document.getElementById('drawer');
+  var mask = document.getElementById('drawerMask');
+  var closeBtn = document.getElementById('drawerClose');
+  function openDrawer(){
+    drawer.classList.add('show');
+    mask.classList.add('show');
+    hamburger.setAttribute('aria-expanded','true');
+    closeBtn.focus();
+  }
+  function closeDrawer(){
+    drawer.classList.remove('show');
+    mask.classList.remove('show');
+    hamburger.setAttribute('aria-expanded','false');
+  }
+  if(hamburger){
+    hamburger.addEventListener('click', function(){
+      if(drawer.classList.contains('show')) closeDrawer(); else openDrawer();
+    });
+    closeBtn.addEventListener('click', closeDrawer);
+    mask.addEventListener('click', closeDrawer);
+    drawer.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', closeDrawer);
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && drawer.classList.contains('show')) closeDrawer();
+    });
+  }
+
+  // 回到顶部
+  var backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > window.innerHeight){
+      backTop.classList.add('show');
+    }else{
+      backTop.classList.remove('show');
+    }
+  }, {passive:true});
+  backTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // 频道高亮
+  var sections = document.querySelectorAll('main section[id]');
+  var channelLinks = document.querySelectorAll('.channel-nav a');
+  if('IntersectionObserver' in window && sections.length){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var id = entry.target.id;
+          channelLinks.forEach(function(link){
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, {rootMargin:'-120px 0px -60% 0px', threshold:0});
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "花都影视hdys电脑观看",
+  "description": "电脑端影视播放指南，涵盖4K HDR片源、H.265硬解、字幕同步与播放器参数。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "4K H.265 片源在笔记本上播放卡顿，是硬件不行吗？",
+      "acceptedAnswer": {"@type":"Answer","text":"先看解码器状态。播放器显示ffmpeg software说明在软解，4K 10bit 软解对 CPU 要求极高。开启硬解后仍卡，检查显卡驱动版本，UHD 620 需 27.20.100.8681 以上才稳定支持 Main10。驱动没问题还卡，就是显存带宽不足，降到 1080P 播放是更实际的选择。"}
+    },
+    {
+      "@type": "Question",
+      "name": "外挂字幕全程越看越偏，是什么原因？",
+      "acceptedAnswer": {"@type":"Answer","text":"帧率不匹配。23.976fps 的片源配 25fps 的字幕，每 1000 秒会累积约 42 秒偏移。用 Subtitle Edit 打开字幕，选同步按帧率调整，输入片源与字幕各自的帧率，工具会重算全部时间轴。调整后跳到最后一段对白验证。"}
+    },
+    {
+      "@type": "Question",
+      "name": "杜比视界片源在普通显示器上发灰，怎么调？",
+      "acceptedAnswer": {"@type":"Answer","text":"杜比视界是动态元数据格式，SDR 显示器无法直接呈现，必须做色调映射。madVR 的 HDR 转 SDR 功能是常用方案，把目标峰值亮度设为显示器实际亮度，伽马设 2.2。找一段天空与阴影同框的镜头做对照，能同时看清两者就算调对了。"}
+    },
+    {
+      "@type": "Question",
+      "name": "内封 PGS 字幕太小，能改吗？",
+      "acceptedAnswer": {"@type":"Answer","text":"PGS 是图形字幕，本质是一张张图片叠在画面上，播放器无法改字号。可用 MKVExtractGUI 或 ffmpeg 提取，再用 Subtitle Edit 的 OCR 功能转成 SRT 文本字幕。转换会丢失特效定位，对白类字幕影响不大。"}
+    },
+    {
+      "@type": "Question",
+      "name": "60 帧版电影和 24 帧原版，观感差别在哪？",
+      "acceptedAnswer": {"@type":"Answer","text":"60 帧版通过插帧或原生高帧率拍摄实现。动作场面更顺滑，但电影感会减弱。原生 60 帧拍摄的片子观感自然，插帧生成的 60 帧在快速摇镜时容易出伪影。选哪个版本取决于更在意流畅度还是传统电影的运动模糊质感。"}
+    },
+    {
+      "@type": "Question",
+      "name": "同一部剧的完整版和卫视剪辑版，差在哪？",
+      "acceptedAnswer": {"@type":"Answer","text":"主要在台词密度和支线保留。以狂飙为例，完整版 39 集，卫视剪辑版约 36 集，差异集中在第 12 集之后的反派支线。剪辑版删减的多是过渡戏，主线不受影响，但人物动机的铺垫会变薄。"}
+    }
+  ]
+}
+</script>
+
+</body>
+                </html>
